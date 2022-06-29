@@ -10,11 +10,11 @@
 	"repositories":[
 		{
 			"type":"vcs",
-			"url" :"https://github.com/fandeco/category"
+			"url" :"https://github.com/fandeco/Category"
 		}
 	],
 	"require"     :{
-		"fandeco/category":"^1.0.0"
+		"fandeco/category":"dev-master"
 	}
 }
 ```
