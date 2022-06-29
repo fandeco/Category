@@ -1,8 +1,7 @@
 <?php
 
-	namespace fandeco\Category;
+	namespace fandeco\category;
 
-	use Exception;
 	/**
 	 * Единый класс категорий
 	 *
@@ -209,27 +208,27 @@
 		/**
 		 * Проверяет связи категории и подкатегории.
 		 * Возвращает: [$category, $sub_category]. В правильном регистре
-		 * @throws Exception
+		 * @throws CategoryExtension
 		 */
 		public function validate(string $category, string $sub_category = '')
 		{
 			if (empty($category)) {
-				throw new Exception('Отсутствует основная категория');
+				throw new CategoryExtension('Отсутствует основная категория', $category, $sub_category);
 			}
 			if (self::rawText($category, FALSE) === self::rawText($sub_category, FALSE)) {
 				$sub_category = '';
 			}
 			if (self::rawText($category, FALSE) === self::rawText('на ручную проверку', FALSE)) {
-				throw new Exception('На ручную проверку');
+				throw new CategoryExtension('На ручную проверку', $category, $sub_category);
 			}
 			if (!in_array(self::rawText($category, FALSE), $this->whiteListCategory, TRUE)) {
-				throw new Exception("Не зарегистрированная категория: '$category'");
+				throw new CategoryExtension("Не зарегистрированная категория", $category, $sub_category);
 			}
 			$category = self::$text[self::rawText($category, FALSE)];
 			if ($sub_category) {
 				$subs = $this->whiteListSubCategory[$this->categoryWhiteList[self::rawText($category, FALSE)]];
 				if (!$subs or !in_array(self::rawText($sub_category, FALSE), $subs, TRUE)) {
-					throw new Exception("Не зарегистрированная подкатегория: '$sub_category'");
+					throw new CategoryExtension("Не зарегистрированная подкатегория", $category, $sub_category);
 				}
 				$sub_category = self::$text[self::rawText($sub_category, FALSE)];
 			}
