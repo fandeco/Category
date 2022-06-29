@@ -101,7 +101,7 @@
 		: void
 		{
 			try {
-				[$category, $subCategory] = $this->category->validate("люстры", "ПоТоЛоЧнЫе лЮсТрЫ");
+				[$category, $subCategory] = $this->category->validate("люстры", "ПоТоЛоЧнЫе    лЮсТрЫ");
 				$this->assertTrue(TRUE);
 				$this->assertEquals('Люстры', $category);
 				$this->assertEquals("Потолочные люстры", $subCategory);
