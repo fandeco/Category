@@ -2,6 +2,7 @@
 	namespace fandeco\category;
 
 	use Exception;
+	use Throwable;
 
 	class CategoryExtension extends Exception
 	{
