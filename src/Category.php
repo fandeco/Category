@@ -432,19 +432,30 @@
 		}
 
 		/**
-		 * @param $category
+		 * Возвращает подкатегории внутри категории
+		 * @param int|string $category
 		 * @return array
+		 * @throws CategoryExtension
 		 */
 		public function getSubCategoriesByCategory($category)
 		: array
 		{
+			if (!is_numeric($category)) {
+				$category = $this->getCategoryId($category);
+			}
 			$result = [];
-			foreach ($this->whiteList[$this->categories[$category]] as $value) {
+			foreach ($this->whiteList[$category] as $value) {
 				$result[] = $this->subCategories[$value];
 			}
 			return $result;
 		}
 
+
+		/**
+		 * @param $a
+		 * @param $add
+		 * @return string
+		 */
 		protected function rawText($a = '', $add = TRUE)
 		{
 			$r = mb_strtolower(preg_replace('@[^A-zА-я\d]|[/_\\\.,]@u', '', (string)$a));
@@ -454,7 +465,12 @@
 			return $r;
 		}
 
+
 		/**
+		 * Возвращает данные о категории и подкатегории
+		 * @param int|string $category
+		 * @param int|string $subCategory
+		 * @return array
 		 * @throws CategoryExtension
 		 */
 		public function getDataByCategory($category, $subCategory)
@@ -466,6 +482,10 @@
 			if (!is_numeric($subCategory)) {
 				$subCategory = $this->getSubCategoryId($subCategory);
 			}
-			return $this->getData()[$category][$subCategory];
+			$data = $this->getData()[$category][$subCategory];
+			if (empty($data)) {
+				throw new CategoryExtension('Не удалось получить данные', $category, $subCategory);
+			}
+			return $data;
 		}
 	}
