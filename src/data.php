@@ -171,8 +171,8 @@
 					[
 						'category'    => 'Трековые системы',
 						'subCategory' => 'Комплектующие для трековых систем',
-						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web {$vendor} {$collection} {$article}',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$vendor} {$collection} {$article}',
 					],
 			],
 		10 =>
@@ -195,8 +195,8 @@
 					[
 						'category'    => 'Магнитные трековые системы',
 						'subCategory' => 'Комплектующие для трековых систем',
-						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web {$vendor} {$collection} {$article}',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$vendor} {$collection} {$article}',
 					],
 			],
 		11 =>
@@ -469,8 +469,8 @@
 					[
 						'category'    => 'Праздничное освещение',
 						'subCategory' => 'Интерьерные украшения',
-						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web {$vendor} {$collection} {$article}',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$vendor} {$collection} {$article}',
 					],
 				66 =>
 					[
@@ -500,43 +500,43 @@
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для люстр',
-						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web {$vendor} {$collection} {$article}',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$vendor} {$collection} {$article}',
 					],
 				3 =>
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для подвесных и потолочных светильников',
-						'singular'    => 'Особенность_web',
-						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article} ',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$sub_category} {$vendor} {$collection} {$article} ',
 					],
 				1 =>
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для бра',
-						'singular'    => 'Особенность_web',
-						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
 					],
 				6 =>
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для точечных светильников',
-						'singular'    => 'Особенность_web',
-						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
 					],
 				4 =>
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для спотов',
-						'singular'    => 'Особенность_web',
-						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
 					],
 				5 =>
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для торшеров',
-						'singular'    => 'Особенность_web',
-						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
 					],
 			],
 		17 =>
@@ -622,119 +622,119 @@
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Розетки',
 						'singular'    => 'Розетка',
-						'template'    => 'Розетка [артикул]',
+						'template'    => 'Розетка',
 					],
 				11  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Выключатели, переключатели',
 						'singular'    => 'Коммутатор',
-						'template'    => 'Коммутатор [артикул]',
+						'template'    => 'Коммутатор {$article}',
 					],
 				70  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Рамки',
 						'singular'    => 'Рамка',
-						'template'    => 'Рамка [артикул]',
+						'template'    => 'Рамка {$article}',
 					],
 				46  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Лицевые панели, заглушки',
 						'singular'    => 'Панель',
-						'template'    => 'Панель [артикул]',
+						'template'    => 'Панель {$article}',
 					],
 				24  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Диммеры, светорегуляторы',
 						'singular'    => 'Светорегулятор',
-						'template'    => 'Светорегулятор [артикул]',
+						'template'    => 'Светорегулятор {$article}',
 					],
 				92  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Терморегуляторы',
 						'singular'    => 'Терморегулятор',
-						'template'    => 'Терморегулятор [артикул]',
+						'template'    => 'Терморегулятор {$article}',
 					],
 				18  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Датчики движения',
 						'singular'    => 'Датчик движения',
-						'template'    => 'Датчик движения [артикул]',
+						'template'    => 'Датчик движения {$article}',
 					],
 				19  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Датчики освещенности',
 						'singular'    => 'Датчики освещенности',
-						'template'    => 'Датчики освещенности [артикул]',
+						'template'    => 'Датчики освещенности {$article}',
 					],
 				72  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Реле wifi',
 						'singular'    => 'Реле wifi',
-						'template'    => 'Реле wifi [артикул]',
+						'template'    => 'Реле wifi {$article}',
 					],
 				91  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Таймеры',
 						'singular'    => 'Таймер',
-						'template'    => 'Таймер [артикул]',
+						'template'    => 'Таймер {$article}',
 					],
 				27  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Звонки',
 						'singular'    => 'Звонок',
-						'template'    => 'Звонок [артикул]',
+						'template'    => 'Звонок {$article}',
 					],
 				100 =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Удлинители, сетевые фильтры',
 						'singular'    => 'Розетка',
-						'template'    => 'Розетка [артикул]',
+						'template'    => 'Розетка {$article}',
 					],
 				30  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Кабели',
 						'singular'    => 'Кабель',
-						'template'    => 'Кабель [артикул]',
+						'template'    => 'Кабель {$article}',
 					],
 				58  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Патроны',
 						'singular'    => 'Патрон',
-						'template'    => 'Патрон [артикул]',
+						'template'    => 'Патрон {$article}',
 					],
 				69  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Разветвители',
 						'singular'    => 'Разветвитель',
-						'template'    => 'Разветвитель [артикул]',
+						'template'    => 'Разветвитель {$article}',
 					],
 				71  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Распаячные коробки',
 						'singular'    => 'Распаячная коробка',
-						'template'    => 'Распаячная коробка [артикул]',
+						'template'    => 'Распаячная коробка {$article}',
 					],
 				35  =>
 					[
 						'category'    => 'Электроустановочные изделия',
 						'subCategory' => 'Клеммы',
 						'singular'    => 'Клемма',
-						'template'    => 'Клемма [артикул]',
+						'template'    => 'Клемма {$article}',
 					],
 			],
 		20 =>
@@ -744,14 +744,14 @@
 						'category'    => 'Декор',
 						'subCategory' => 'Зеркала',
 						'singular'    => 'Зеркало',
-						'template'    => 'Зеркало [артикул]',
+						'template'    => 'Зеркало {$article}',
 					],
 				34  =>
 					[
 						'category'    => 'Декор',
 						'subCategory' => 'Картины',
 						'singular'    => 'Картина',
-						'template'    => 'Картина [артикул]',
+						'template'    => 'Картина {$article}',
 					],
 				107 =>
 					[
@@ -796,21 +796,21 @@
 						'category'    => 'Мебель',
 						'subCategory' => 'Столы',
 						'singular'    => 'Стол',
-						'template'    => 'Стол [артикул]',
+						'template'    => 'Стол {$article}',
 					],
 				90 =>
 					[
 						'category'    => 'Мебель',
 						'subCategory' => 'Стулья',
 						'singular'    => 'Стул',
-						'template'    => 'Стул [артикул]',
+						'template'    => 'Стул {$article}',
 					],
 				51 =>
 					[
 						'category'    => 'Мебель',
 						'subCategory' => 'Мягкая мебель',
-						'singular'    => 'Особенность_web',
-						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article} ',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$sub_category} {$vendor} {$collection} {$article} ',
 					],
 				88 =>
 					[
@@ -823,8 +823,8 @@
 					[
 						'category'    => 'Мебель',
 						'subCategory' => 'Комоды, тумбы',
-						'singular'    => 'Особенность_web',
-						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article} ',
+						'singular'    => '',
+						'template'    => '{$osobennost} {$sub_category} {$vendor} {$collection} {$article} ',
 					],
 			],
 	];
