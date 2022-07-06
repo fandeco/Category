@@ -123,4 +123,17 @@
 				$this->fail();
 			}
 		}
+
+		public function testValidate7()
+		: void
+		{
+			try {
+				[$category, $subCategory] = $this->category->validate("люстры", "ПоТоЛоЧнЫе    лЮсТрЫ");
+				$this->assertTrue(TRUE);
+				$this->assertEquals('Люстры', $category);
+				$this->assertEquals("Потолочные люстры", $subCategory);
+			} catch (CategoryExtension $e) {
+				$this->fail();
+			}
+		}
 	}

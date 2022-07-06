@@ -4,7 +4,8 @@
 
 [Проект по новым категориям](https://docs.google.com/spreadsheets/d/1tKIDh4Lo4LjGdXGw5-UzO8ZCRkCDkNYMw4wjB3sU7MM/edit#gid=33988330)
 
-## подключение 
+## подключение
+
 ```json
 {
 	"repositories":[
@@ -30,10 +31,20 @@ use fandeco\category\CategoryExtension;
 $categoryValidator = new Category();
 
 try {
+// Возвращает правильные категорию и под категорию. Используйте только ети значения, а не те что переданы в аргументы
 	[$validCategory,$validSubCategory] = $categoryValidator->validate("test", "test2");
 	
 } catch (CategoryExtension $e) {
 	echo $e->getMessage().'; '.	$e->getCategory().'; '.	$e->getSubCategory()
 }
+//Возвращает данные о категории
+$categoryValidator->getDataByCategory("Люстры","Потолочные люстры") // 
+//[
+//	'category'    => 'Люстры',
+//	'subCategory' => 'Потолочные люстры',
+//	'singular'    => 'Потолочная люстра',
+//	'template'    => 'Потолочная люстра {$vendor} {$collection} {$article}',
+//]
+
 
 ```

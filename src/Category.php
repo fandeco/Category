@@ -15,9 +15,10 @@
 		 * Список правильных имен категорий и подкатегорий
 		 * @var array
 		 */
-		private array $text = [];
-		private array $categories;
-		private array $subCategories;
+		protected array $text = [];
+		protected array $categories;
+		protected array $subCategories;
+		protected array $data = [];
 
 		public function __construct()
 		{
@@ -327,6 +328,17 @@
 			];
 		}
 
+		/**
+		 * @return array
+		 */
+		public function getData()
+		: array
+		{
+			if (empty($this->data)) {
+				$this->data = include __DIR__ . "/data.php";
+			}
+			return $this->data;
+		}
 
 		/**
 		 * Проверяет связи категории и подкатегории.
@@ -361,7 +373,6 @@
 			}
 			return [$realCategory, $realSubCategory];
 		}
-
 
 		/**
 		 * @throws CategoryExtension
@@ -434,20 +445,27 @@
 			return $result;
 		}
 
-
-		public function getSingular(string $category, string $subCategory = '')
-		: string
-		{
-
-			return "";
-		}
-
-		public function rawText($a = '', $add = TRUE)
+		protected function rawText($a = '', $add = TRUE)
 		{
 			$r = mb_strtolower(preg_replace('@[^A-zА-я\d]|[/_\\\.,]@u', '', (string)$a));
 			if ($add) {
 				$this->text[$r] = $a;
 			}
 			return $r;
+		}
+
+		/**
+		 * @throws CategoryExtension
+		 */
+		public function getDataByCategory($category, $subCategory)
+		: array
+		{
+			if (!is_numeric($category)) {
+				$category = $this->getCategoryId($category);
+			}
+			if (!is_numeric($subCategory)) {
+				$subCategory = $this->getSubCategoryId($subCategory);
+			}
+			return $this->getData()[$category][$subCategory];
 		}
 	}
