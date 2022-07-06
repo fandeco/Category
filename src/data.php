@@ -508,35 +508,35 @@
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для подвесных и потолочных светильников',
 						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web+Вид светильника Интернет {$vendor} {$collection} {$article} ',
+						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article} ',
 					],
 				1 =>
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для бра',
 						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web+Вид светильника Интернет {$vendor} {$collection} {$article}',
+						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
 					],
 				6 =>
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для точечных светильников',
 						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web+Вид светильника Интернет {$vendor} {$collection} {$article}',
+						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
 					],
 				4 =>
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для спотов',
 						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web+Вид светильника Интернет {$vendor} {$collection} {$article}',
+						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
 					],
 				5 =>
 					[
 						'category'    => 'Аксессуары',
 						'subCategory' => 'Аксессуары для торшеров',
 						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web+Вид светильника Интернет {$vendor} {$collection} {$article}',
+						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article}',
 					],
 			],
 		17 =>
@@ -810,7 +810,7 @@
 						'category'    => 'Мебель',
 						'subCategory' => 'Мягкая мебель',
 						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web+Вид светильника Интернет {$vendor} {$collection} {$article} ',
+						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article} ',
 					],
 				88 =>
 					[
@@ -824,7 +824,7 @@
 						'category'    => 'Мебель',
 						'subCategory' => 'Комоды, тумбы',
 						'singular'    => 'Особенность_web',
-						'template'    => 'Особенность_web+Вид светильника Интернет {$vendor} {$collection} {$article} ',
+						'template'    => ' {$osobennost} {$sub_category} {$vendor} {$collection} {$article} ',
 					],
 			],
 	];
