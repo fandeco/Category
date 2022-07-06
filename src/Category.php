@@ -15,10 +15,10 @@
 		 * Список правильных имен категорий и подкатегорий
 		 * @var array
 		 */
-		protected array $text = [];
-		protected array $categories;
-		protected array $subCategories;
-		protected array $data = [];
+		protected $text = [];
+		protected $categories;
+		protected $subCategories;
+		protected $data = [];
 
 		public function __construct()
 		{
