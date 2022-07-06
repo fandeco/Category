@@ -128,10 +128,10 @@
 		: void
 		{
 			try {
-				[$category, $subCategory] = $this->category->validate("люстры", "ПоТоЛоЧнЫе    лЮсТрЫ");
+				[$category, $subCategory] = $this->category->validate("Трековые системы", "Трековые светильники");
 				$this->assertTrue(TRUE);
-				$this->assertEquals('Люстры', $category);
-				$this->assertEquals("Потолочные люстры", $subCategory);
+				$this->assertEquals('Трековые системы', $category);
+				$this->assertEquals("Трековые светильники", $subCategory);
 			} catch (CategoryExtension $e) {
 				$this->fail();
 			}
