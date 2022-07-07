@@ -52,4 +52,15 @@
 
 			}
 		}
+		public function testData3()
+		: void
+		{
+			try {
+				$data = $this->category->getDataByCategory("Подвесные светильники");
+				$this->assertEquals("Подвесной светильник", $data['singular']);
+			} catch (CategoryExtension $e) {
+				$this->fail();
+
+			}
+		}
 	}
