@@ -13,10 +13,11 @@
 		 * Список правильных имен категорий и подкатегорий
 		 * @var array
 		 */
-		protected $text = [];
+		protected $text          = [];
 		protected $categories;
 		protected $subCategories;
-		protected $data = [];
+		protected $data          = [];
+		protected $categoryOrder = [];
 
 		public function __construct()
 		{
@@ -352,6 +353,25 @@
 						5 => 38,
 					],
 			];
+			$this->categoryOrder = [
+				1  => 1,
+				2  => 2,
+				3  => 3,
+				4  => 4,
+				5  => 5,
+				6  => 8,
+				7  => 7,
+				8  => 6,
+				9  => 9,
+				10 => 10,
+				11 => 11,
+				13 => 12,
+				14 => 13,
+				15 => 16,
+				16 => 17,
+				17 => 14,
+				18 => 15,
+			];
 		}
 
 		/**
@@ -515,6 +535,16 @@
 			return $data;
 		}
 
+		/**
+		 * @throws CategoryExtension
+		 */
+		public function getOrderByCategory($category)
+		{
+			if (!is_numeric($category)) {
+				$category = $this->getCategoryId($category);
+			}
+			return $this->categoryOrder[$category];
+		}
 
 		/**
 		 * Парсит csv
@@ -560,4 +590,6 @@
 			}
 			file_put_contents(__DIR__ . 'data.php', "<?php\nreturn " . var_export($this->data, 1) . ";");
 		}
+
+
 	}
