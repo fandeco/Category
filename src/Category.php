@@ -11,8 +11,8 @@
 	{
 		public $categories;
 		public $subCategories;
-		public       $data          = [];
-		public array $categoryOrder = [];
+		public $data          = [];
+		public $categoryOrder = [];
 		/**
 		 * @var mixed
 		 */
