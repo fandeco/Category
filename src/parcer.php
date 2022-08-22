@@ -1,12 +1,13 @@
 <?php
 	require '../vendor/autoload.php';
 
+	const InputFileName = __DIR__ . '/../category.xlsx';
+
 	function rawText($a = '')
 	{
 		return (string)mb_strtolower(preg_replace('@[^A-zА-я\d]|[/_\\\.,]@u', '', (string)$a));
 	}
 
-	$inputFileName      = 'C:\Projects\Category\category.xlsx';
 	$testAgainstFormats = [
 		\PhpOffice\PhpSpreadsheet\IOFactory::READER_XLSX,
 		\PhpOffice\PhpSpreadsheet\IOFactory::READER_XLS,
@@ -14,7 +15,7 @@
 	];
 
 	/** Load $inputFileName to a Spreadsheet Object  **/
-	$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($inputFileName, 0, $testAgainstFormats);
+	$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(InputFileName, 0, $testAgainstFormats);
 
 	$sheet = $spreadsheet->getSheet(0);
 

@@ -51,3 +51,10 @@ $categoryValidator->getDataByCategory("Люстры","Потолочные лю�
 $categoryValidator->getOrderByCategory("Люстры") // 1 
 
 ```
+
+# ПРОЦЕСС ОБНОВЛЕНИЯ
+
+0) скачать [Проект по новым категориям](https://docs.google.com/spreadsheets/d/1tKIDh4Lo4LjGdXGw5-UzO8ZCRkCDkNYMw4wjB3sU7MM/edit#gid=33988330) в формате `xlsx`
+1) положить в папу с проэктом
+2) открыть файл `src/parcer.php` и изменить путь до файла в константе `InputFileName`
+3) запусить скрипт `src/parcer.php`
