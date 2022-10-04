@@ -1,6 +1,6 @@
 <?php
 	require '../vendor/autoload.php';
-
+	error_reporting(E_ERROR);
 	const InputFileName = __DIR__ . '/../category.xlsx';
 
 	function rawText($a = '')
@@ -72,7 +72,7 @@
 
 		$data[$categoriesKeys[$categoryKEY]][$subCategoriesKeys[$subCategoryKEY]] = [
 			'template'    => $template,
-			'singular'    => $row[9],
+			'singular'    => $row[8],
 			'feature'     => array_map(function ($str) {
 				return trim($str, ' "');
 			}, explode(',', $row[6])),
