@@ -25,8 +25,6 @@
 
 		private function getProduct(int $id)
 		{
-
-
 			$curl = curl_init();
 
 			curl_setopt_array($curl, [
@@ -56,7 +54,7 @@
 		public function testValidate()
 		: void
 		{
-			$this->description->add($this->getProduct(263756));
+			$this->description->add($this->getProduct(126613));
 			$this->description->gen();
 			echo $this->description->last_without_html;
 

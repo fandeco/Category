@@ -195,6 +195,7 @@
 		public          $last              = '';    #массив описания для seo и иных шаблонов
 		public          $last_without_html = '';
 		public Category $categoryValidator;
+		public          $singulars         = [];
 
 		/**
 		 * @param array<String,mixed> $items
@@ -214,6 +215,7 @@
 		public function add($items = [])
 		{
 			$this->items[] = $items;
+			return $this;
 		}
 
 		/**
@@ -222,62 +224,78 @@
 		public function gen()
 		{
 			foreach ($this->items as $item) {
-				$disc         = [];
-				$artikul_1c   = (string)$item['artikul_1c'];
-				$show_artikul = $item['show_artikul'];
-				$sub_category = $item['sub_category'];
-				$category     = $item['category'];
-				$vendor       = $item['vendor'];
-				$SEED         = (int)preg_replace('/\D/', '', $artikul_1c);
-				mt_srand($SEED);
-				if (mb_strtolower($category) != 'лампочки') {
-					$diameter       = $item['diameter'];
-					$country_orig   = $item['country_orig'];
-					$collection     = $item['collection'];
-					$weight         = $item['weight'];
-					$forma          = $item['forma'];
-					$ip_class       = $item['ip_class'];
-					$style          = $item['style'];
-					$plafond_color  = $item['plafond_color'];
-					$plafond_mat    = $item['plafond_material'];
-					$armature_color = $item['armature_color'];
-					$armature_mat   = $item['armature_material'];
-					$lamp_socket    = $item['lamp_socket'];
-					$interer        = $item['interer'];
-					$length         = $item['length'];
-					$width          = $item['width'];
-					$height         = $item['height'];
-					$num_of_lamp    = $item['num_of_lamp'];
-					$ploshad_osvesv = $item['ploshad_osvesheniya'];
+				[$result, $raw] = $this->discription($item);
+				$this->discriptions[(string)$artikul_1c]      = $result;
+				$this->disc_without_html[(string)$artikul_1c] = $raw;
+				$this->Json[(string)$artikul_1c]              = $disc;
+				$this->last_without_html                      = $raw;
+				$this->last                                   = $result;
+			}
+			return $this;
+		}
 
-					//fish
-					$fish = NULL;
-					if ($category && self::indexSearch($category, $this->ignore)) {
-						$this->discriptions[$artikul_1c]      = '';
-						$this->disc_without_html[$artikul_1c] = '';
-						$this->Json[$artikul_1c]              = '';
-						$this->last_without_html              = '';
-						$this->last                           = '';
-						continue;
-					}
-					if (self::indexSearch($sub_category, $this->streets) or self::indexSearch($category, $this->streets)) {
-						$fish = $this->fish['street'][rand(0, count($this->fish['street']) - 1)];
+		public function discription($item)
+		{
+			$disc         = [];
+			$artikul_1c   = (string)$item['artikul_1c'];
+			$show_artikul = $item['show_artikul'];
+			$sub_category = $item['sub_category'];
+			$category     = $item['category'];
+			$vendor       = $item['vendor'];
+			$SEED         = (int)preg_replace('/\D/', '', $artikul_1c);
+			mt_srand($SEED);
+			if (mb_strtolower($category) != 'лампочки') {
+				$diameter       = $item['diameter'];
+				$country_orig   = $item['country_orig'];
+				$collection     = $item['collection'];
+				$weight         = $item['weight'];
+				$forma          = $item['forma'];
+				$ip_class       = $item['ip_class'];
+				$style          = $item['style'];
+				$plafond_color  = $item['plafond_color'];
+				$plafond_mat    = $item['plafond_material'];
+				$armature_color = $item['armature_color'];
+				$armature_mat   = $item['armature_material'];
+				$lamp_socket    = $item['lamp_socket'];
+				$interer        = $item['interer'];
+				$length         = $item['length'];
+				$width          = $item['width'];
+				$height         = $item['height'];
+				$num_of_lamp    = $item['num_of_lamp'];
+				$ploshad_osvesv = $item['ploshad_osvesheniya'];
+
+				//fish
+				$fish = NULL;
+				if ($category && self::indexSearch($category, $this->ignore)) {
+					return '';
+				}
+				if (self::indexSearch($sub_category, $this->streets) or self::indexSearch($category, $this->streets)) {
+					$fish = $this->fish['street'][rand(0, count($this->fish['street']) - 1)];
+				} else {
+					$fish = $this->fish['default'][rand(0, count($this->fish['default']) - 1)];
+				}
+				if ($fish) {
+					$fish .= '.';
+				}
+				//vendor
+				if ($vendor && !is_numeric($vendor)) {
+					$vendor = strtr((string)$vendor, $this->vendor);
+				} else {
+					$vendor = $item['vendor.name_1c'] ?: NULL;
+				}
+				//sub_category
+				try {
+					[$category, $sub_category] = $this->categoryValidator->validate($category, $sub_category);
+					$catData = $this->categoryValidator->getDataByCategory($category, $sub_category);
+					if (!empty($catData['singular'])) {
+						$cat = $catData['singular'];
 					} else {
-						$fish = $this->fish['default'][rand(0, count($this->fish['default']) - 1)];
+						trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
+						$cat = 'Светильник';
 					}
-					if ($fish) {
-						$fish .= '.';
-					}
-					//vendor
-					if ($vendor && !is_numeric($vendor)) {
-						$vendor = strtr((string)$vendor, $this->vendor);
-					} else {
-						$vendor = $item['vendor.name_1c'] ?: NULL;
-					}
-					//sub_category
+				} catch (CategoryExtension $e) {
 					try {
-						[$category, $sub_category] = $this->categoryValidator->validate($category, $sub_category);
-						$catData = $this->categoryValidator->getDataByCategory($category, $sub_category);
+						$catData = $this->categoryValidator->getDataByCategory($category);
 						if (!empty($catData['singular'])) {
 							$cat = $catData['singular'];
 						} else {
@@ -285,245 +303,244 @@
 							$cat = 'Светильник';
 						}
 					} catch (CategoryExtension $e) {
-						try {
-							$catData = $this->categoryValidator->getDataByCategory($category);
-							if (!empty($catData['singular'])) {
-								$cat = $catData['singular'];
-							} else {
-								trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
-								$cat = 'Светильник';
-							}
-						} catch (CategoryExtension $e) {
-							trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
-							$cat = 'Светильник';
-						}
+						trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
+						$cat = 'Светильник';
 					}
-					//collection
-					if ($collection) {
-						$collection = 'серии ' . $collection;
-					}
-					//style
-					if ($style) {
-						$style = strtr($style[0], $this->style);
-					} else {
-						$style = NULL;
-					}
-					//Размеры (ДхШхВ)
-					$size = NULL;
-					if ((int)$length or (int)$width or (int)$height) {
-						$sz        = ['length' => (float)$length, 'width' => (float)$width, 'height' => (float)$height];
-						$max       = array_keys($sz, max($sz))[0];
-						$sz2[$max] = self::format_len($sz[$max]);
-						unset($sz[$max]);
-						$fom = $sz2[$max][1];
-						foreach ($sz as $key => $value) {
-							$sz2[$key] = self::format_len($value, $fom);
-							$sz[$key]  = $sz2[$key][0];
-						}
-						$sz[$max] = $sz2[$max][0];
-						switch (array_sum($sz)) {
-							case $sz['length']:
-								$sz2  = $sz['length'];
-								$size = 'Длина ' . $sz2 . ' ' . $fom . '.';
-								break;
-							case $sz['width']:
-								$sz2  = $sz['width'];
-								$size = 'Ширина ' . $sz2 . ' ' . $fom . '.';
-								break;
-							case $sz['height']:
-								$sz2  = $sz['height'];
-								$size = 'Высота ' . $sz2 . ' ' . $fom . '.';
-								break;
-							default:
-								$size = 'Размеры ' . $sz2['length'][0] . 'x' . $sz2['width'][0] . 'x' . $sz2['height'][0] . ' ' . $fom . '.';
-								break;
-						}
-						unset($sz2, $sz);
-					}
-					if ($diameter) {
-						$dim      = self::format_len($diameter, $fom);
-						$diameter = 'Диаметр ' . $dim[0] . ' ' . $fom;
-					} else {
-						$diameter = NULL;
-					}
-					//Форма
-					if ($forma) {
-						$forma = strtr($forma[0], $this->forma);
-						$forma = 'Форма ' . $forma . '.';
-					} else {
-						$forma = NULL;
-					}
-					//арматура
-					if ($armature_mat and $armature_color) {
-						$arma = 'материал/цвет арматуры ' . $armature_mat[0] . '/' . $armature_color[0] . '.';
-					} else {
-						$arma = NULL;
-					}
-					//Плафон
-					if ($plafond_mat) {
-						$plafond = strtr($plafond_mat[0], $this->plafond_mat) . ' ';
-					} else {
-						$plafond = NULL;
-					}
-					if ($plafond_color) {
-						if ($plafond == NULL) {
-							$plafond = 'Плафон ';
-						}
-						$plafond .= strtr($plafond_color[0], $this->plafond_color);
-						if ($arma) {
-							$plafond .= ', а';
-						} else {
-							$plafond .= '.';
-						}
-					} else {
-						$plafond = NULL;
-					}
-					//пылевлагозащиты
-					if ((int)$ip_class) {
-						$ip_class = 'Параметры пылевлагозащиты IP — ' . (int)$ip_class . '.';
-					} else {
-						$ip_class = NULL;
-					}
-					if ($country_orig) {
-						$country_orig = 'Страна происхождения бренда — ' . $country_orig . '.';
-					} else {
-						$country_orig = NULL;
-					}
-					//лампы и цоколи
-					$lamp = NULL;
-					if ($num_of_lamp or $lamp_socket) {
-						$lamp = 'Использует ';
-						if ($num_of_lamp) {
-							$num_of_lamp_text = self::plural(
-								$num_of_lamp,
-								'лампу ',
-								'лампы ',
-								'ламп '
-							);
-							$lamp             .= $num_of_lamp . ' ' . $num_of_lamp_text;
-						}
-						if ($lamp_socket) {
-							if (count($lamp_socket) > 1) {
-								if (!$num_of_lamp) {
-									$lamp .= 'лампы ';
-								}
-								$lamp .= 'с цоколями ' . implode(',', $lamp_socket);
-							} elseif ($lamp_socket[0] == 'LED') {
-								$lamp = 'Имеются встроенные светодиодные лампы, рассчитанные на весь срок службы светильника';
-							} else {
-								if (!$num_of_lamp) {
-									$lamp .= 'лампу ';
-								}
-								$lamp .= 'с цоколем ' . $lamp_socket[0];
-							}
-							$lamp .= '.';
-						}
-					}
-					//вес
-					if ((int)$weight > 0) {
-						$weight = self::format_weight($weight);
-						$weight = 'Вес с упаковкой ' . $weight[0] . ' ' . $weight[1];
-					} else {
-						$weight = NULL;
-					}
-					//interer
-					if ($interer) {
-						$interer2 = 'Идеально подходит ';
-						$int_arr  = implode(', ', $interer);
-						if (count($interer) == 2) {
-							$int_arr = str_replace(', Для', ' или', $int_arr);
-						}
-						$interer2 .= mb_strtolower($int_arr . '.');
-					}
-					//Площадь освещения
-					if ((float)$ploshad_osvesv > 0) {
-						$ploshad_osvesv = 'Площадь освещения охватывает ' . $ploshad_osvesv . ' m².';
-					} else {
-						$ploshad_osvesv = NULL;
-					}
-					$plafond .= ' ' . $arma;
-					$plafond = mb_strtolower($plafond);
-					$plafond = self::mb_ucfirst($plafond);
-					$forma   = mb_strtolower($forma);
-					$forma   = self::mb_ucfirst($forma);
+				}
+				if ($cat === 'Светильник' && (isset($this->singulars[$sub_category]) || isset($this->singulars[$category]))) {
+					$cat = $this->singulars[$sub_category] ?: $this->singulars[$category];
+				}
+				if (empty($cat)) {
+					$cat = 'Светильник';
+				}
+				//collection
+				if ($collection) {
+					$collection = 'серии ' . $collection;
+				}
+				//style
+				if ($style) {
+					$style = strtr($style[0], $this->style);
 				} else {
-					if ($item['lamp_type']) {
-						if ($item['lamp_type'] == 'накаливания') {
-							$cat = "Лампа накаливания ";
+					$style = NULL;
+				}
+				//Размеры (ДхШхВ)
+				$size = NULL;
+				if ((int)$length or (int)$width or (int)$height) {
+					$sz        = ['length' => (float)$length, 'width' => (float)$width, 'height' => (float)$height];
+					$max       = array_keys($sz, max($sz))[0];
+					$sz2[$max] = self::format_len($sz[$max]);
+					unset($sz[$max]);
+					$fom = $sz2[$max][1];
+					foreach ($sz as $key => $value) {
+						$sz2[$key] = self::format_len($value, $fom);
+						$sz[$key]  = $sz2[$key][0];
+					}
+					$sz[$max] = $sz2[$max][0];
+					switch (array_sum($sz)) {
+						case $sz['length']:
+							$sz2  = $sz['length'];
+							$size = 'Длина ' . $sz2 . ' ' . $fom . '.';
+							break;
+						case $sz['width']:
+							$sz2  = $sz['width'];
+							$size = 'Ширина ' . $sz2 . ' ' . $fom . '.';
+							break;
+						case $sz['height']:
+							$sz2  = $sz['height'];
+							$size = 'Высота ' . $sz2 . ' ' . $fom . '.';
+							break;
+						default:
+							$size = 'Размеры ' . $sz2['length'][0] . 'x' . $sz2['width'][0] . 'x' . $sz2['height'][0] . ' ' . $fom . '.';
+							break;
+					}
+					unset($sz2, $sz);
+				}
+				if ($diameter) {
+					$dim      = self::format_len($diameter, $fom);
+					$diameter = 'Диаметр ' . $dim[0] . ' ' . $fom;
+				} else {
+					$diameter = NULL;
+				}
+				//Форма
+				if ($forma) {
+					$forma = strtr($forma[0], $this->forma);
+					$forma = 'Форма ' . $forma . '.';
+				} else {
+					$forma = NULL;
+				}
+				//арматура
+				if ($armature_mat and $armature_color) {
+					$arma = 'материал/цвет арматуры ' . $armature_mat[0] . '/' . $armature_color[0] . '.';
+				} else {
+					$arma = NULL;
+				}
+				//Плафон
+				if ($plafond_mat) {
+					$plafond = strtr($plafond_mat[0], $this->plafond_mat) . ' ';
+				} else {
+					$plafond = NULL;
+				}
+				if ($plafond_color) {
+					if ($plafond == NULL) {
+						$plafond = 'Плафон ';
+					}
+					$plafond .= strtr($plafond_color[0], $this->plafond_color);
+					if ($arma) {
+						$plafond .= ', а';
+					} else {
+						$plafond .= '.';
+					}
+				} else {
+					$plafond = NULL;
+				}
+				//пылевлагозащиты
+				if ((int)$ip_class) {
+					$ip_class = 'Параметры пылевлагозащиты IP — ' . (int)$ip_class . '.';
+				} else {
+					$ip_class = NULL;
+				}
+				if ($country_orig) {
+					$country_orig = 'Страна происхождения бренда — ' . $country_orig . '.';
+				} else {
+					$country_orig = NULL;
+				}
+				//лампы и цоколи
+				$lamp = NULL;
+				if ($num_of_lamp or $lamp_socket) {
+					$lamp = 'Использует ';
+					if ($num_of_lamp) {
+						$num_of_lamp_text = self::plural(
+							$num_of_lamp,
+							'лампу ',
+							'лампы ',
+							'ламп '
+						);
+						$lamp             .= $num_of_lamp . ' ' . $num_of_lamp_text;
+					}
+					if ($lamp_socket) {
+						if (count($lamp_socket) > 1) {
+							if (!$num_of_lamp) {
+								$lamp .= 'лампы ';
+							}
+							$lamp .= 'с цоколями ' . implode(',', $lamp_socket);
+						} elseif ($lamp_socket[0] == 'LED') {
+							$lamp = 'Имеются встроенные светодиодные лампы, рассчитанные на весь срок службы светильника';
 						} else {
-							$cat = $item['lamp_type'] . " лампочка";
+							if (!$num_of_lamp) {
+								$lamp .= 'лампу ';
+							}
+							$lamp .= 'с цоколем ' . $lamp_socket[0];
 						}
-					} else {
-						$cat = "лампочка";
-					}
-					if ($item['lamp_socket']) {
-						$collection = 'С цоколем ' . $item['lamp_socket'][0];
-					}
-					if ($item['tsvet_temp']) {
-						$style = 'Имеет приятный ' . $item['tsvet_temp'][0] . ' свет';
-					} else {
-						$style = NULL;
-					}
-					if ($item['power']) {
-						$fish = 'Потребляет ' . $item['power'] . ' W.';
-					} else {
-						$fish = NULL;
-					}
-					if ($item['voltage']) {
-						$size = 'Рассчитана на напряжение ' . $item['voltage'] . ' V';
-					} else {
-						$size = NULL;
+						$lamp .= '.';
 					}
 				}
-				//сборка
-				$disc['category']       = $cat;
-				$disc['vendor']         = $vendor;
-				$disc['show_artikul']   = $show_artikul;
-				$disc['collection']     = $collection;
-				$disc['style']          = $style;
-				$disc['fish']           = $fish;
-				$disc['size']           = $size;
-				$disc['diameter']       = $diameter;
-				$disc['ip_class']       = $ip_class;
-				$disc['forma']          = $forma;
-				$disc['plafond']        = $plafond;
-				$disc['lamp']           = $lamp;
-				$disc['ploshad_osvesv'] = $ploshad_osvesv;
-				$disc['interer']        = $interer2;
-				$disc['country_orig']   = $country_orig;
-				$disc['weight']         = $weight;
-				//-----
-
-				foreach ($disc as $key => $value) {
-					if ($value) {
-						$disc[$key] = '<span class="' . $key . '">' . $value . '</span>';
+				//вес
+				if ((int)$weight > 0) {
+					$weight = self::format_weight($weight);
+					$weight = 'Вес с упаковкой ' . $weight[0] . ' ' . $weight[1];
+				} else {
+					$weight = NULL;
+				}
+				//interer
+				if ($interer) {
+					$interer2 = 'Идеально подходит ';
+					$int_arr  = implode(', ', $interer);
+					if (count($interer) == 2) {
+						$int_arr = str_replace(', Для', ' или', $int_arr);
+					}
+					$interer2 .= mb_strtolower($int_arr . '.');
+				}
+				//Площадь освещения
+				if ((float)$ploshad_osvesv > 0) {
+					$ploshad_osvesv = 'Площадь освещения охватывает ' . $ploshad_osvesv . ' m².';
+				} else {
+					$ploshad_osvesv = NULL;
+				}
+				$plafond .= ' ' . $arma;
+				$plafond = mb_strtolower($plafond);
+				$plafond = self::mb_ucfirst($plafond);
+				$forma   = mb_strtolower($forma);
+				$forma   = self::mb_ucfirst($forma);
+			} else {
+				if ($item['lamp_type']) {
+					if ($item['lamp_type'] == 'накаливания') {
+						$cat = "Лампа накаливания ";
 					} else {
-						unset($disc[$key]);
+						$cat = $item['lamp_type'] . " лампочка";
 					}
+				} else {
+					$cat = "лампочка";
 				}
-				$dk = array_keys($disc);
-				foreach ($dk as $k => $val) {
-					if ($val == 'fish') {
-						$disc[$dk[$k - 1]] = str_replace('</span>', '.</span>', $disc[$dk[$k - 1]]);
-					}
+				if ($item['lamp_socket']) {
+					$collection = 'С цоколем ' . $item['lamp_socket'][0];
 				}
-				$result = implode(' ', $disc);
-				$re     = '/\s{2,}/m';
-				$subst  = ' ';
-				//-----
-				$result                                       = str_replace('кафе. ресторанов', 'кафе и ресторанов', $result);
-				$result                                       = preg_replace("/(Array)/", $subst, $result);
-				$result                                       = preg_replace($re, $subst, $result);
-				$woh                                          = preg_replace("/<.*?>/", '', strip_tags($result));
-				$woh                                          = preg_replace("/(\.{2,})|(\s+\.+)/", '.', $woh);
-				$this->discriptions[(string)$artikul_1c]      = $result;
-				$this->disc_without_html[(string)$artikul_1c] = $woh;
-				$this->Json[(string)$artikul_1c]              = $disc;
-				$this->last_without_html                      = $woh;
-				$this->last                                   = $result;
-				return TRUE;
+				if ($item['tsvet_temp']) {
+					$style = 'Имеет приятный ' . $item['tsvet_temp'][0] . ' свет';
+				} else {
+					$style = NULL;
+				}
+				if ($item['power']) {
+					$fish = 'Потребляет ' . $item['power'] . ' W.';
+				} else {
+					$fish = NULL;
+				}
+				if ($item['voltage']) {
+					$size = 'Рассчитана на напряжение ' . $item['voltage'] . ' V';
+				} else {
+					$size = NULL;
+				}
 			}
-			return FALSE;
+			//сборка
+			$disc['category']       = $cat;
+			$disc['vendor']         = $vendor;
+			$disc['show_artikul']   = $show_artikul;
+			$disc['collection']     = $collection;
+			$disc['style']          = $style;
+			$disc['fish']           = $fish;
+			$disc['size']           = $size;
+			$disc['diameter']       = $diameter;
+			$disc['ip_class']       = $ip_class;
+			$disc['forma']          = $forma;
+			$disc['plafond']        = $plafond;
+			$disc['lamp']           = $lamp;
+			$disc['ploshad_osvesv'] = $ploshad_osvesv;
+			$disc['interer']        = $interer2;
+			$disc['country_orig']   = $country_orig;
+			$disc['weight']         = $weight;
+			//-----
+
+			foreach ($disc as $key => $value) {
+				if ($value) {
+					$disc[$key] = '<span class="' . $key . '">' . $value . '</span>';
+				} else {
+					unset($disc[$key]);
+				}
+			}
+			$dk = array_keys($disc);
+			foreach ($dk as $k => $val) {
+				if ($val == 'fish') {
+					$disc[$dk[$k - 1]] = str_replace('</span>', '.</span>', $disc[$dk[$k - 1]]);
+				}
+			}
+			$result = implode(' ', $disc);
+			$re     = '/\s{2,}/m';
+			$subst  = ' ';
+			//-----
+			$result = str_replace('кафе. ресторанов', 'кафе и ресторанов', $result);
+			$result = preg_replace("/(Array)/", $subst, $result);
+			$result = preg_replace($re, $subst, $result);
+			$raw    = preg_replace("/<.*?>/", '', strip_tags($result));
+			$raw    = preg_replace("/(\.{2,})|(\s+\.+)/", '.', $raw);
+			return [$result, $raw];
+		}
+
+		/**
+		 * @return array|mixed
+		 */
+		public function setSingular($text, $singular)
+		{
+			$this->singulars[$text] = $singular;
+			return $this;
 		}
 
 		/**
@@ -531,7 +548,7 @@
 		 * @param string $encoding
 		 * @return false|string
 		 */
-		static function mb_ucfirst(string $str, $encoding = 'UTF-8')
+		public static function mb_ucfirst(string $str, $encoding = 'UTF-8')
 		{
 			$str = mb_ereg_replace('^[\ ]+', '', $str);
 			return mb_strtoupper(mb_substr($str, 0, 1, $encoding), $encoding) .
