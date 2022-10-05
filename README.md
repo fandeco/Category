@@ -63,11 +63,21 @@ Category::getFileNameFromArticle('6053/17 AP-1'); //6053~17 AP-1
 $description = new Description($items);
 $description->add($item)
 $description->gen()
+$description->descriptions //  массив с готовыми описаниями [[articul] =>'discription']
+$description->disc_without_html // массив описаний ключ - артикул 1с значение описание с html
+$description->Json // Массив описания для seo и иных шаблонов
+
+//-------
+$description = new Description();
+[$result, $raw, $disc] = $description->description($item)// возвращает массив описаний для $item [$result, $raw, $disc]
+$result// описание с html
+$raw// описание без html
+$disc//  Массив описания для seo и иных шаблонов
 ```
 
 # ПРОЦЕСС ОБНОВЛЕНИЯ
 
 1) скачать [Проект по новым категориям](https://docs.google.com/spreadsheets/d/1tKIDh4Lo4LjGdXGw5-UzO8ZCRkCDkNYMw4wjB3sU7MM/edit#gid=33988330) в формате `xlsx`
-2) положить в папу с проэктом
+2) положить в папу с проектом
 3) открыть файл `src/parcer.php` и изменить путь до файла в константе `InputFileName`
-4) запусить скрипт `src/parcer.php`
+4) запустить скрипт `src/parcer.php`

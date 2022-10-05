@@ -9,6 +9,7 @@
 	namespace fandeco\test;
 	require_once "../vendor/autoload.php";
 
+	use Exception;
 	use fandeco\category\Description;
 	use PHPUnit\Framework\TestCase;
 
@@ -49,7 +50,7 @@
 
 		/**
 		 * @return void
-		 * @throws \Exception
+		 * @throws Exception
 		 */
 		public function testValidate()
 		: void
@@ -57,6 +58,15 @@
 			$this->description->add($this->getProduct(126613));
 			$this->description->gen();
 			echo $this->description->last_without_html;
+
+			$this->assertTrue(TRUE);
+		}
+
+		public function testValidate2()
+		: void
+		{
+			[$result, $raw, $disc] = $this->description->description($this->getProduct(126613));
+			echo $raw;
 
 			$this->assertTrue(TRUE);
 		}

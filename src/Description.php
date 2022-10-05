@@ -182,17 +182,29 @@
 			];
 		public $category;
 
-		public $descriptions      = [];    # массив с готовыми описаниями [[articul] =>'discription']
-		public $disc_without_html = [];    # массив с готовыми описаниями [[articul] =>'discription'] без html
+		/**
+		 * Массив с готовыми описаниями [[articul] =>'discription']
+		 * @var array
+		 */
+		public $descriptions = [];
+		/**
+		 * Массив с готовыми описаниями [[articul] =>'discription'] без html
+		 * @var array
+		 */
+		public $disc_without_html = [];
 
 		/**
 		 * @var array{forma:string,style:string,width:string,power:string,vendor:string,weight:string,length:string,height:string,interer:string,voltage:string,category:string,diameter:string,
 		 *     ip_class:string,lamp_type:string,artikul_1c:string,collection:string,tsvet_temp:string,lamp_socket:array,num_of_lamp:int,show_artikul:string,sub_category:string,country_orig:string,
 		 *     plafond_color:string,armature_color:string,plafond_material:string,armature_material:string,ploshad_osvesheniya:string}[] $items
 		 */
-		public          $items             = [];    #массив товаров и их атрибутов [articul=>[atributs]]
-		public          $Json              = [];    #массив описания для seo и иных шаблонов
-		public          $last              = '';    #массив описания для seo и иных шаблонов
+		public $items = [];    #массив товаров и их атрибутов [articul=>[atributs]]
+		/**
+		 * Массив описания для seo и иных шаблонов
+		 * @var array
+		 */
+		public          $Json              = [];
+		public          $last              = '';
 		public          $last_without_html = '';
 		public Category $categoryValidator;
 		public          $singulars         = [];
@@ -224,7 +236,7 @@
 		public function gen()
 		{
 			foreach ($this->items as $item) {
-				[$result, $raw] = $this->discription($item);
+				[$result, $raw, $disc] = $this->description($item);
 				$this->discriptions[(string)$artikul_1c]      = $result;
 				$this->disc_without_html[(string)$artikul_1c] = $raw;
 				$this->Json[(string)$artikul_1c]              = $disc;
@@ -234,7 +246,7 @@
 			return $this;
 		}
 
-		public function discription($item)
+		public function description($item)
 		{
 			$disc         = [];
 			$artikul_1c   = (string)$item['artikul_1c'];
@@ -531,7 +543,7 @@
 			$result = preg_replace($re, $subst, $result);
 			$raw    = preg_replace("/<.*?>/", '', strip_tags($result));
 			$raw    = preg_replace("/(\.{2,})|(\s+\.+)/", '.', $raw);
-			return [$result, $raw];
+			return [$result, $raw, $disc];
 		}
 
 		/**
