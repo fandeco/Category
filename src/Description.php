@@ -543,8 +543,50 @@
 			$result = preg_replace($re, $subst, $result);
 			$raw    = preg_replace("/<.*?>/", '', strip_tags($result));
 			$raw    = preg_replace("/(\.{2,})|(\s+\.+)/", '.', $raw);
+
+            $this->result = $result;
+            $this->raw = $raw;
+            $this->disc = $disc;
 			return [$result, $raw, $disc];
 		}
+
+        public ?string $result;
+        public ?string $raw;
+        public ?array $disc;
+
+        /**
+         * @return string|null
+         */
+        public function html()
+        {
+            return $this->result;
+        }
+
+
+        /**
+         * @return string|null
+         */
+        public function raw()
+        {
+            return $this->raw;
+        }
+
+        /**
+         * @return array|null
+         */
+        public function disc()
+        {
+            return $this->disc;
+        }
+
+        /**
+         * @return array|null
+         */
+        public function toArray()
+        {
+            return $this->disc;
+        }
+
 
 		/**
 		 * @return array|mixed
