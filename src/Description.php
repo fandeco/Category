@@ -297,12 +297,12 @@
 				}
 				//sub_category
 				try {
-					[$category, $sub_category] = $this->categoryValidator->validate($category, $sub_category);
+					[$category, $sub_category] = $this->categoryValidator->validate((string)$category, (string)$sub_category);
 					$catData = $this->categoryValidator->getDataByCategory($category, $sub_category);
 					if (!empty($catData['singular'])) {
 						$cat = $catData['singular'];
 					} else {
-						trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
+//						trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
 						$cat = 'Светильник';
 					}
 				} catch (CategoryExtension $e) {
@@ -311,11 +311,11 @@
 						if (!empty($catData['singular'])) {
 							$cat = $catData['singular'];
 						} else {
-							trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
+//							trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
 							$cat = 'Светильник';
 						}
 					} catch (CategoryExtension $e) {
-						trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
+//						trigger_error("[" . __CLASS__ . "]:Unknown category. '" . $category . "'", E_USER_DEPRECATED);
 						$cat = 'Светильник';
 					}
 				}
