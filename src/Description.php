@@ -304,7 +304,7 @@ class Description
             //sub_category
             try {
                 [$category, $sub_category] = $this->categoryValidator->validate((string)$category, (string)$sub_category);
-                $catData = $this->categoryValidator->getDataByCategory($category, $sub_category);
+                $catData = $this->categoryValidator->getDataByCategory((string)$category, (string)$sub_category);
                 if (!empty($catData['singular'])) {
                     $cat = $catData['singular'];
                 } else {
@@ -313,7 +313,7 @@ class Description
                 }
             } catch (CategoryExtension $e) {
                 try {
-                    $catData = $this->categoryValidator->getDataByCategory($category);
+                    $catData = $this->categoryValidator->getDataByCategory((string)$category);
                     if (!empty($catData['singular'])) {
                         $cat = $catData['singular'];
                     } else {
