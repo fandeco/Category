@@ -470,7 +470,7 @@ class Description
             }
             //Площадь освещения
             if ((float)$ploshad_osvesv > 0) {
-                $ploshad_osvesv = 'Площадь освещения охватывает ' . $ploshad_osvesv . ' m².';
+                $ploshad_osvesv = 'Площадь освещения охватывает ' . $ploshad_osvesv . ' m<span style="font-family: \'Arial\',serif">²</span>.';
             } else {
                 $ploshad_osvesv = NULL;
             }
