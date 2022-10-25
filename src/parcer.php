@@ -1,5 +1,5 @@
 <?php
-	require '../vendor/autoload.php';
+	require dirname(__DIR__) . '/vendor/autoload.php';
 	error_reporting(E_ERROR);
 	define("INPUT_FILE_NAME", dirname(__DIR__) . '/category.xlsx');
 
