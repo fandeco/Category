@@ -1,9 +1,9 @@
 <?php
 	require '../vendor/autoload.php';
 	error_reporting(E_ERROR);
-	const InputFileName = __DIR__ . '/../category.xlsx';
+	define("INPUT_FILE_NAME", dirname(__DIR__) . '/category.xlsx');
 
-	function rawText($a = '')
+	function raw_text($a = '')
 	{
 		return (string)mb_strtolower(preg_replace('@[^A-zА-я\d]|[/_\\\.,]@u', '', (string)$a));
 	}
@@ -15,7 +15,7 @@
 	];
 
 	/** Load $inputFileName to a Spreadsheet Object  **/
-	$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(InputFileName, 0, $testAgainstFormats);
+	$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(INPUT_FILE_NAME, 0, $testAgainstFormats);
 
 	$sheet = $spreadsheet->getSheet(0);
 
@@ -41,8 +41,8 @@
 
 
 		$subCategory       = $row[2];
-		$categoryKEY       = rawText($category);
-		$subCategoryKEY    = rawText($subCategory);
+		$categoryKEY       = raw_text($category);
+		$subCategoryKEY    = raw_text($subCategory);
 		$categories[]      = $categoryKEY;
 		$subCategories[]   = $subCategoryKEY;
 		$categories        = array_unique($categories);
