@@ -7,3 +7,5 @@ composer.phar
 .idea
 .phpunit.result.cache
 category.xlsx
+
+.project-manager/
