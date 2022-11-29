@@ -283,6 +283,10 @@ $whiteList = array (
   0 => 
   array (
     0 => 0,
+    1 => 1,
+    2 => 2,
+    3 => 3,
+    4 => 4,
   ),
   1 => 
   array (
@@ -291,47 +295,8 @@ $whiteList = array (
   2 => 
   array (
     0 => 0,
-    1 => 21,
-    2 => 22,
   ),
   3 => 
-  array (
-    0 => 0,
-    1 => 15,
-    2 => 16,
-    3 => 17,
-  ),
-  4 => 
-  array (
-    0 => 0,
-    1 => 18,
-    2 => 19,
-    3 => 20,
-  ),
-  5 => 
-  array (
-    0 => 0,
-    1 => 28,
-    2 => 29,
-    3 => 30,
-  ),
-  6 => 
-  array (
-    0 => 0,
-    1 => 1,
-    2 => 2,
-    3 => 3,
-    4 => 4,
-  ),
-  7 => 
-  array (
-    0 => 0,
-    1 => 82,
-    2 => 83,
-    3 => 84,
-    4 => 85,
-  ),
-  8 => 
   array (
     0 => 0,
     1 => 5,
@@ -340,7 +305,7 @@ $whiteList = array (
     4 => 8,
     5 => 9,
   ),
-  9 => 
+  4 => 
   array (
     0 => 0,
     1 => 10,
@@ -349,7 +314,27 @@ $whiteList = array (
     4 => 13,
     5 => 14,
   ),
-  10 => 
+  5 => 
+  array (
+    0 => 0,
+    1 => 15,
+    2 => 16,
+    3 => 17,
+  ),
+  6 => 
+  array (
+    0 => 0,
+    1 => 18,
+    2 => 19,
+    3 => 20,
+  ),
+  7 => 
+  array (
+    0 => 0,
+    1 => 21,
+    2 => 22,
+  ),
+  8 => 
   array (
     0 => 0,
     1 => 23,
@@ -358,7 +343,14 @@ $whiteList = array (
     4 => 26,
     5 => 27,
   ),
-  11 => 
+  9 => 
+  array (
+    0 => 0,
+    1 => 28,
+    2 => 29,
+    3 => 30,
+  ),
+  10 => 
   array (
     0 => 0,
     1 => 31,
@@ -367,7 +359,7 @@ $whiteList = array (
     4 => 34,
     5 => 35,
   ),
-  12 => 
+  11 => 
   array (
     0 => 0,
     1 => 36,
@@ -377,6 +369,23 @@ $whiteList = array (
     5 => 40,
     6 => 41,
     7 => 42,
+  ),
+  12 => 
+  array (
+    0 => 0,
+    1 => 43,
+    2 => 44,
+    3 => 45,
+    4 => 46,
+    5 => 47,
+    6 => 48,
+    7 => 49,
+    8 => 50,
+    9 => 51,
+    10 => 52,
+    11 => 53,
+    12 => 54,
+    13 => 55,
   ),
   13 => 
   array (
@@ -392,13 +401,16 @@ $whiteList = array (
   14 => 
   array (
     0 => 0,
-    1 => 86,
-    2 => 87,
-    3 => 88,
-    4 => 89,
-    5 => 90,
-    6 => 91,
-    7 => 92,
+    1 => 63,
+    2 => 64,
+    3 => 65,
+    4 => 66,
+    5 => 67,
+    6 => 68,
+    7 => 69,
+    8 => 70,
+    9 => 71,
+    10 => 72,
   ),
   15 => 
   array (
@@ -416,48 +428,23 @@ $whiteList = array (
   16 => 
   array (
     0 => 0,
-    1 => 109,
-    2 => 110,
-    3 => 111,
-    4 => 112,
-    5 => 113,
-    6 => 114,
-    7 => 115,
-    8 => 116,
-    9 => 117,
+    1 => 82,
+    2 => 83,
+    3 => 84,
+    4 => 85,
   ),
   17 => 
   array (
     0 => 0,
-    1 => 63,
-    2 => 64,
-    3 => 65,
-    4 => 66,
-    5 => 67,
-    6 => 68,
-    7 => 69,
-    8 => 70,
-    9 => 71,
-    10 => 72,
+    1 => 86,
+    2 => 87,
+    3 => 88,
+    4 => 89,
+    5 => 90,
+    6 => 91,
+    7 => 92,
   ),
   18 => 
-  array (
-    0 => 0,
-    1 => 43,
-    2 => 44,
-    3 => 45,
-    4 => 46,
-    5 => 47,
-    6 => 48,
-    7 => 49,
-    8 => 50,
-    9 => 51,
-    10 => 52,
-    11 => 53,
-    12 => 54,
-    13 => 55,
-  ),
-  19 => 
   array (
     0 => 0,
     1 => 93,
@@ -477,9 +464,77 @@ $whiteList = array (
     15 => 107,
     16 => 108,
   ),
+  19 => 
+  array (
+    0 => 0,
+    1 => 109,
+    2 => 110,
+    3 => 111,
+    4 => 112,
+    5 => 113,
+    6 => 114,
+    7 => 115,
+    8 => 116,
+    9 => 117,
+  ),
 ) ;
 $data = array (
   0 => 
+  array (
+    1 => 
+    array (
+      'template' => 'Потолочная люстра {$vendor} {$collection} {$article}',
+      'singular' => 'Потолочная люстра',
+      'feature' => 
+      array (
+        0 => 'Люстры-вентиляторы',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    2 => 
+    array (
+      'template' => 'Подвесная люстра {$vendor} {$collection} {$article}',
+      'singular' => 'Подвесная люстра',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    3 => 
+    array (
+      'template' => 'Люстра на штанге {$vendor} {$collection} {$article}',
+      'singular' => 'Люстра на штанге',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    4 => 
+    array (
+      'template' => '',
+      'singular' => 'Каскадная люстра',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+  ),
+  1 => 
   array (
     0 => 
     array (
@@ -497,7 +552,7 @@ $data = array (
       ),
     ),
   ),
-  1 => 
+  2 => 
   array (
     0 => 
     array (
@@ -514,74 +569,64 @@ $data = array (
       ),
     ),
   ),
-  2 => 
-  array (
-    21 => 
-    array (
-      'template' => 'Торшер {$vendor} {$collection} {$article}',
-      'singular' => 'Торшер с одним плафоном',
-      'feature' => 
-      array (
-        0 => 'со столиком',
-        1 => 'с лампой для чтения',
-        2 => 'на треноге',
-      ),
-      'installType' => 
-      array (
-        0 => 'напольные',
-        1 => 'подвесные',
-      ),
-    ),
-    22 => 
-    array (
-      'template' => 'Торшер {$vendor} {$collection} {$article}',
-      'singular' => 'Торшер с двумя и более плафонами',
-      'feature' => 
-      array (
-        0 => 'со столиком',
-        1 => 'с лампой для чтения',
-        2 => 'на треноге',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-  ),
   3 => 
   array (
-    28 => 
+    5 => 
     array (
-      'template' => 'Магнитный трековый светильник {$vendor} {$collection} {$article}',
-      'singular' => 'Магнитный трековый светильник',
+      'template' => 'Настенный светильник {$vendor} {$collection} {$article}',
+      'singular' => 'Настенный светильник',
       'feature' => 
       array (
-        0 => 'магнитные',
+        0 => '',
       ),
       'installType' => 
       array (
         0 => '',
       ),
     ),
-    29 => 
+    6 => 
     array (
-      'template' => 'Шинопровод {$vendor} {$collection} {$article}',
-      'singular' => 'Шинопровод',
+      'template' => 'Настенно-потолочный светильник {$vendor} {$collection} {$article}',
+      'singular' => 'Настенно-потолочный светильник',
       'feature' => 
       array (
-        0 => 'магнитные',
+        0 => '',
       ),
       'installType' => 
       array (
-        0 => 'встраиваемые',
-        1 => 'накладные',
-        2 => 'подвесные',
+        0 => '',
       ),
     ),
-    30 => 
+    7 => 
     array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => 'Комплектующая',
+      'template' => 'Бра {$vendor} {$collection} {$article}',
+      'singular' => 'Бра с одним плафоном',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    8 => 
+    array (
+      'template' => '',
+      'singular' => 'Бра с двумя плафонами',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    9 => 
+    array (
+      'template' => '',
+      'singular' => 'Настенно-потолочный светильник',
       'feature' => 
       array (
         0 => '',
@@ -594,10 +639,27 @@ $data = array (
   ),
   4 => 
   array (
-    18 => 
+    10 => 
     array (
-      'template' => 'Спот {$vendor} {$collection} {$article}',
-      'singular' => 'Спот с одним плафоном',
+      'template' => 'Декоративная настольная лампа {$vendor} {$collection} {$article}',
+      'singular' => 'Декоративная настольная лампа',
+      'feature' => 
+      array (
+        0 => 'на подставке',
+        1 => 'на прищепке',
+        2 => 'на струбцине',
+        3 => 'детские',
+        4 => 'многофункциональные',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    11 => 
+    array (
+      'template' => 'Офисная настольная лампа {$vendor} {$collection} {$article}',
+      'singular' => 'Офисная настольная лампа',
       'feature' => 
       array (
         0 => '',
@@ -607,10 +669,10 @@ $data = array (
         0 => '',
       ),
     ),
-    19 => 
+    12 => 
     array (
-      'template' => 'Спот {$vendor} {$collection} {$article}',
-      'singular' => 'Спот с двумя плафонами',
+      'template' => 'Кабинетная настольная лампа {$vendor} {$collection} {$article}',
+      'singular' => 'Кабинетная настольная лампа',
       'feature' => 
       array (
         0 => '',
@@ -620,10 +682,23 @@ $data = array (
         0 => '',
       ),
     ),
-    20 => 
+    13 => 
     array (
-      'template' => 'Спот {$vendor} {$collection} {$article}',
-      'singular' => 'Спот с тремя и более плафонами',
+      'template' => 'Ночник {$vendor} {$collection} {$article}',
+      'singular' => 'Ночник',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    14 => 
+    array (
+      'template' => 'Детская настольная лампа {$vendor} {$collection} {$article}',
+      'singular' => NULL,
       'feature' => 
       array (
         0 => '',
@@ -678,32 +753,10 @@ $data = array (
   ),
   6 => 
   array (
-    82 => 
+    18 => 
     array (
-      'template' => 'Светодиодная лампа {$vendor} {$collection} {$article}',
-      'singular' => 'Светодиодная лампа',
-      'feature' => 
-      array (
-        0 => 'шар',
-        1 => 'свеча',
-        2 => 'свеча на ветру',
-        3 => 'груша',
-        4 => 'фигурные',
-        5 => 'кукуруза',
-        6 => 'таблетка',
-        7 => 'колба',
-        8 => 'софит',
-        9 => 'рефлектор',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    83 => 
-    array (
-      'template' => 'Галогенная лампа {$vendor} {$collection} {$article}',
-      'singular' => 'Галогенная лампа',
+      'template' => 'Спот {$vendor} {$collection} {$article}',
+      'singular' => 'Спот с одним плафоном',
       'feature' => 
       array (
         0 => '',
@@ -713,10 +766,10 @@ $data = array (
         0 => '',
       ),
     ),
-    84 => 
+    19 => 
     array (
-      'template' => 'Лампа накаливания {$vendor} {$collection} {$article}',
-      'singular' => 'Лампа накаливания',
+      'template' => 'Спот {$vendor} {$collection} {$article}',
+      'singular' => 'Спот с двумя плафонами',
       'feature' => 
       array (
         0 => '',
@@ -726,10 +779,10 @@ $data = array (
         0 => '',
       ),
     ),
-    85 => 
+    20 => 
     array (
-      'template' => '',
-      'singular' => NULL,
+      'template' => 'Спот {$vendor} {$collection} {$article}',
+      'singular' => 'Спот с тремя и более плафонами',
       'feature' => 
       array (
         0 => '',
@@ -742,52 +795,31 @@ $data = array (
   ),
   7 => 
   array (
-    1 => 
+    21 => 
     array (
-      'template' => 'Потолочная люстра {$vendor} {$collection} {$article}',
-      'singular' => 'Потолочная люстра',
+      'template' => 'Торшер {$vendor} {$collection} {$article}',
+      'singular' => 'Торшер с одним плафоном',
       'feature' => 
       array (
-        0 => 'Люстры-вентиляторы',
+        0 => 'со столиком',
+        1 => 'с лампой для чтения',
+        2 => 'на треноге',
       ),
       'installType' => 
       array (
-        0 => '',
+        0 => 'напольные',
+        1 => 'подвесные',
       ),
     ),
-    2 => 
+    22 => 
     array (
-      'template' => 'Подвесная люстра {$vendor} {$collection} {$article}',
-      'singular' => 'Подвесная люстра',
+      'template' => 'Торшер {$vendor} {$collection} {$article}',
+      'singular' => 'Торшер с двумя и более плафонами',
       'feature' => 
       array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    3 => 
-    array (
-      'template' => 'Люстра на штанге {$vendor} {$collection} {$article}',
-      'singular' => 'Люстра на штанге',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    4 => 
-    array (
-      'template' => '',
-      'singular' => 'Каскадная люстра',
-      'feature' => 
-      array (
-        0 => '',
+        0 => 'со столиком',
+        1 => 'с лампой для чтения',
+        2 => 'на треноге',
       ),
       'installType' => 
       array (
@@ -871,66 +903,38 @@ $data = array (
   ),
   9 => 
   array (
-    10 => 
+    28 => 
     array (
-      'template' => 'Декоративная настольная лампа {$vendor} {$collection} {$article}',
-      'singular' => 'Декоративная настольная лампа',
+      'template' => 'Магнитный трековый светильник {$vendor} {$collection} {$article}',
+      'singular' => 'Магнитный трековый светильник',
       'feature' => 
       array (
-        0 => 'на подставке',
-        1 => 'на прищепке',
-        2 => 'на струбцине',
-        3 => 'детские',
-        4 => 'многофункциональные',
+        0 => 'магнитные',
       ),
       'installType' => 
       array (
         0 => '',
       ),
     ),
-    11 => 
+    29 => 
     array (
-      'template' => 'Офисная настольная лампа {$vendor} {$collection} {$article}',
-      'singular' => 'Офисная настольная лампа',
+      'template' => 'Шинопровод {$vendor} {$collection} {$article}',
+      'singular' => 'Шинопровод',
       'feature' => 
       array (
-        0 => '',
+        0 => 'магнитные',
       ),
       'installType' => 
       array (
-        0 => '',
+        0 => 'встраиваемые',
+        1 => 'накладные',
+        2 => 'подвесные',
       ),
     ),
-    12 => 
+    30 => 
     array (
-      'template' => 'Кабинетная настольная лампа {$vendor} {$collection} {$article}',
-      'singular' => 'Кабинетная настольная лампа',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    13 => 
-    array (
-      'template' => 'Ночник {$vendor} {$collection} {$article}',
-      'singular' => 'Ночник',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    14 => 
-    array (
-      'template' => 'Детская настольная лампа {$vendor} {$collection} {$article}',
-      'singular' => NULL,
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => 'Комплектующая',
       'feature' => 
       array (
         0 => '',
@@ -942,74 +946,6 @@ $data = array (
     ),
   ),
   10 => 
-  array (
-    5 => 
-    array (
-      'template' => 'Настенный светильник {$vendor} {$collection} {$article}',
-      'singular' => 'Настенный светильник',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    6 => 
-    array (
-      'template' => 'Настенно-потолочный светильник {$vendor} {$collection} {$article}',
-      'singular' => 'Настенно-потолочный светильник',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    7 => 
-    array (
-      'template' => 'Бра {$vendor} {$collection} {$article}',
-      'singular' => 'Бра с одним плафоном',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    8 => 
-    array (
-      'template' => '',
-      'singular' => 'Бра с двумя плафонами',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    9 => 
-    array (
-      'template' => '',
-      'singular' => 'Настенно-потолочный светильник',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-  ),
-  11 => 
   array (
     31 => 
     array (
@@ -1077,112 +1013,7 @@ $data = array (
       ),
     ),
   ),
-  12 => 
-  array (
-    86 => 
-    array (
-      'template' => '',
-      'singular' => NULL,
-      'feature' => 
-      array (
-        0 => 'для закарнизной подвестки',
-        1 => 'подсветка для кухни',
-        2 => 'подсветка для ванной комнаты',
-        3 => 'мебельная подсветка',
-        4 => 'уличная подсветка',
-        5 => 'праздничная подсветка',
-        6 => 'для влажных сред (сауны',
-        7 => 'бассейна)',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    87 => 
-    array (
-      'template' => '',
-      'singular' => 'Комплектующая',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    88 => 
-    array (
-      'template' => '',
-      'singular' => 'Блок питания',
-      'feature' => 
-      array (
-        0 => 'вольтаж',
-        1 => 'мощность',
-        2 => 'IP',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    89 => 
-    array (
-      'template' => 'Профиль для лент ',
-      'singular' => 'Профиль для лент',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => 'накладные',
-        1 => 'встраиваемые',
-        2 => 'подвесные',
-      ),
-    ),
-    90 => 
-    array (
-      'template' => 'Запчасть для лент',
-      'singular' => 'Запчасть для лент',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    91 => 
-    array (
-      'template' => 'Запчасть для профилей',
-      'singular' => 'Запчасть для профилей',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    92 => 
-    array (
-      'template' => 'Готовый комплект ',
-      'singular' => 'Готовый комплект',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-  ),
-  13 => 
+  11 => 
   array (
     36 => 
     array (
@@ -1276,478 +1107,7 @@ $data = array (
       ),
     ),
   ),
-  14 => 
-  array (
-    56 => 
-    array (
-      'template' => 'Встраиваемый светильник {$vendor} {$collection} {$article}',
-      'singular' => 'Даунлайт',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => 'встраиваемые',
-      ),
-    ),
-    57 => 
-    array (
-      'template' => 'Линейный светильник {$vendor} {$collection} {$article}',
-      'singular' => 'Линейный',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => 'подвесные',
-        1 => 'накладные',
-        2 => 'встраиваемые',
-      ),
-    ),
-    58 => 
-    array (
-      'template' => 'Модульный светильник {$vendor} {$collection} {$article}',
-      'singular' => 'Модульный светильник',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    59 => 
-    array (
-      'template' => 'Карданный светильник {$vendor} {$collection} {$article}',
-      'singular' => 'Карданный светильник',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    60 => 
-    array (
-      'template' => 'Светодиодная панель {$vendor} {$collection} {$article}',
-      'singular' => 'Светодиодная панель',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => 'встраиваемые',
-      ),
-    ),
-    61 => 
-    array (
-      'template' => 'Светильник грильято {$vendor} {$collection} {$article}',
-      'singular' => 'Светильник грильято',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    62 => 
-    array (
-      'template' => 'Светильник армстронг {$vendor} {$collection} {$article}',
-      'singular' => 'Светильник армстронг',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-  ),
-  15 => 
-  array (
-    109 => 
-    array (
-      'template' => 'Зеркало {$article}',
-      'singular' => 'Зеркало',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => 'напольные',
-        1 => 'настенные',
-        2 => 'настольные',
-      ),
-    ),
-    110 => 
-    array (
-      'template' => 'Картина {$article}',
-      'singular' => 'Картина',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    111 => 
-    array (
-      'template' => '',
-      'singular' => NULL,
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    112 => 
-    array (
-      'template' => 'Часы {$vendor} {$collection} {$article}',
-      'singular' => 'Часы',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    113 => 
-    array (
-      'template' => '',
-      'singular' => NULL,
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    114 => 
-    array (
-      'template' => 'Постер {$vendor} {$collection} {$article}',
-      'singular' => 'Постер',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    115 => 
-    array (
-      'template' => '',
-      'singular' => NULL,
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    116 => 
-    array (
-      'template' => '',
-      'singular' => NULL,
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    117 => 
-    array (
-      'template' => 'Ключница {$vendor} {$collection} {$article}',
-      'singular' => 'Ключница',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-  ),
-  16 => 
-  array (
-    73 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => 'Аксессуар',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    74 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article} ',
-      'singular' => 'Аксессуар',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    75 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => 'Аксессуар',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    76 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => NULL,
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    77 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => 'Аксессуар',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    78 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => 'Аксессуар',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    79 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => NULL,
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    80 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => NULL,
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    81 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => 'Аксессуар',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-  ),
-  17 => 
-  array (
-    63 => 
-    array (
-      'template' => 'Гирлянда {$vendor} {$collection} {$article}',
-      'singular' => 'Гирлянда',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    64 => 
-    array (
-      'template' => 'Новогодний подвес {$vendor} {$collection} {$article}',
-      'singular' => 'Новогодний подвес',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    65 => 
-    array (
-      'template' => 'Белт-лайт {$vendor} {$collection} {$article}',
-      'singular' => 'Белт-лайт',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    66 => 
-    array (
-      'template' => 'Дюралайт {$vendor} {$collection} {$article}',
-      'singular' => 'Дюралайт',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    67 => 
-    array (
-      'template' => 'Световая фигура {$vendor} {$collection} {$article}',
-      'singular' => 'Световая фигура',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    68 => 
-    array (
-      'template' => 'Светодиодное дерево {$vendor} {$collection} {$article}',
-      'singular' => 'Светодиодное дерево',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    69 => 
-    array (
-      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
-      'singular' => 'Интерьерные украшения',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    70 => 
-    array (
-      'template' => 'Проектор {$vendor} {$collection} {$article}',
-      'singular' => 'Проектор',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    71 => 
-    array (
-      'template' => 'Диско-шар {$vendor} {$collection} {$article}',
-      'singular' => 'Диско-шар',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-    72 => 
-    array (
-      'template' => 'Свеча/подсвечник {$vendor} {$collection} {$article}',
-      'singular' => 'Свеча',
-      'feature' => 
-      array (
-        0 => '',
-      ),
-      'installType' => 
-      array (
-        0 => '',
-      ),
-    ),
-  ),
-  18 => 
+  12 => 
   array (
     43 => 
     array (
@@ -1920,7 +1280,525 @@ $data = array (
       ),
     ),
   ),
-  19 => 
+  13 => 
+  array (
+    56 => 
+    array (
+      'template' => 'Встраиваемый светильник {$vendor} {$collection} {$article}',
+      'singular' => 'Даунлайт',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => 'встраиваемые',
+      ),
+    ),
+    57 => 
+    array (
+      'template' => 'Линейный светильник {$vendor} {$collection} {$article}',
+      'singular' => 'Линейный',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => 'подвесные',
+        1 => 'накладные',
+        2 => 'встраиваемые',
+      ),
+    ),
+    58 => 
+    array (
+      'template' => 'Модульный светильник {$vendor} {$collection} {$article}',
+      'singular' => 'Модульный светильник',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    59 => 
+    array (
+      'template' => 'Карданный светильник {$vendor} {$collection} {$article}',
+      'singular' => 'Карданный светильник',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    60 => 
+    array (
+      'template' => 'Светодиодная панель {$vendor} {$collection} {$article}',
+      'singular' => 'Светодиодная панель',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => 'встраиваемые',
+      ),
+    ),
+    61 => 
+    array (
+      'template' => 'Светильник грильято {$vendor} {$collection} {$article}',
+      'singular' => 'Светильник грильято',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    62 => 
+    array (
+      'template' => 'Светильник армстронг {$vendor} {$collection} {$article}',
+      'singular' => 'Светильник армстронг',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+  ),
+  14 => 
+  array (
+    63 => 
+    array (
+      'template' => 'Гирлянда {$vendor} {$collection} {$article}',
+      'singular' => 'Гирлянда',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    64 => 
+    array (
+      'template' => 'Новогодний подвес {$vendor} {$collection} {$article}',
+      'singular' => 'Новогодний подвес',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    65 => 
+    array (
+      'template' => 'Белт-лайт {$vendor} {$collection} {$article}',
+      'singular' => 'Белт-лайт',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    66 => 
+    array (
+      'template' => 'Дюралайт {$vendor} {$collection} {$article}',
+      'singular' => 'Дюралайт',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    67 => 
+    array (
+      'template' => 'Световая фигура {$vendor} {$collection} {$article}',
+      'singular' => 'Световая фигура',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    68 => 
+    array (
+      'template' => 'Светодиодное дерево {$vendor} {$collection} {$article}',
+      'singular' => 'Светодиодное дерево',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    69 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => 'Интерьерные украшения',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    70 => 
+    array (
+      'template' => 'Проектор {$vendor} {$collection} {$article}',
+      'singular' => 'Проектор',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    71 => 
+    array (
+      'template' => 'Диско-шар {$vendor} {$collection} {$article}',
+      'singular' => 'Диско-шар',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    72 => 
+    array (
+      'template' => 'Свеча/подсвечник {$vendor} {$collection} {$article}',
+      'singular' => 'Свеча',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+  ),
+  15 => 
+  array (
+    73 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => 'Аксессуар',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    74 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article} ',
+      'singular' => 'Аксессуар',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    75 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => 'Аксессуар',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    76 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => NULL,
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    77 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => 'Аксессуар',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    78 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => 'Аксессуар',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    79 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => NULL,
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    80 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => NULL,
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    81 => 
+    array (
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
+      'singular' => 'Аксессуар',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+  ),
+  16 => 
+  array (
+    82 => 
+    array (
+      'template' => 'Светодиодная лампа {$vendor} {$collection} {$article}',
+      'singular' => 'Светодиодная лампа',
+      'feature' => 
+      array (
+        0 => 'шар',
+        1 => 'свеча',
+        2 => 'свеча на ветру',
+        3 => 'груша',
+        4 => 'фигурные',
+        5 => 'кукуруза',
+        6 => 'таблетка',
+        7 => 'колба',
+        8 => 'софит',
+        9 => 'рефлектор',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    83 => 
+    array (
+      'template' => 'Галогенная лампа {$vendor} {$collection} {$article}',
+      'singular' => 'Галогенная лампа',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    84 => 
+    array (
+      'template' => 'Лампа накаливания {$vendor} {$collection} {$article}',
+      'singular' => 'Лампа накаливания',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    85 => 
+    array (
+      'template' => '',
+      'singular' => NULL,
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+  ),
+  17 => 
+  array (
+    86 => 
+    array (
+      'template' => '',
+      'singular' => NULL,
+      'feature' => 
+      array (
+        0 => 'для закарнизной подвестки',
+        1 => 'подсветка для кухни',
+        2 => 'подсветка для ванной комнаты',
+        3 => 'мебельная подсветка',
+        4 => 'уличная подсветка',
+        5 => 'праздничная подсветка',
+        6 => 'для влажных сред (сауны',
+        7 => 'бассейна)',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    87 => 
+    array (
+      'template' => '',
+      'singular' => 'Комплектующая',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    88 => 
+    array (
+      'template' => '',
+      'singular' => 'Блок питания',
+      'feature' => 
+      array (
+        0 => 'вольтаж',
+        1 => 'мощность',
+        2 => 'IP',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    89 => 
+    array (
+      'template' => 'Профиль для лент ',
+      'singular' => 'Профиль для лент',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => 'накладные',
+        1 => 'встраиваемые',
+        2 => 'подвесные',
+      ),
+    ),
+    90 => 
+    array (
+      'template' => 'Запчасть для лент',
+      'singular' => 'Запчасть для лент',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    91 => 
+    array (
+      'template' => 'Запчасть для профилей',
+      'singular' => 'Запчасть для профилей',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    92 => 
+    array (
+      'template' => 'Готовый комплект ',
+      'singular' => 'Готовый комплект',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+  ),
+  18 => 
   array (
     93 => 
     array (
@@ -2154,148 +2032,270 @@ $data = array (
       ),
     ),
   ),
+  19 => 
+  array (
+    109 => 
+    array (
+      'template' => 'Зеркало {$article}',
+      'singular' => 'Зеркало',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => 'напольные',
+        1 => 'настенные',
+        2 => 'настольные',
+      ),
+    ),
+    110 => 
+    array (
+      'template' => 'Картина {$article}',
+      'singular' => 'Картина',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    111 => 
+    array (
+      'template' => '',
+      'singular' => NULL,
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    112 => 
+    array (
+      'template' => 'Часы {$vendor} {$collection} {$article}',
+      'singular' => 'Часы',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    113 => 
+    array (
+      'template' => '',
+      'singular' => NULL,
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    114 => 
+    array (
+      'template' => 'Постер {$vendor} {$collection} {$article}',
+      'singular' => 'Постер',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    115 => 
+    array (
+      'template' => '',
+      'singular' => NULL,
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    116 => 
+    array (
+      'template' => '',
+      'singular' => NULL,
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+    117 => 
+    array (
+      'template' => 'Ключница {$vendor} {$collection} {$article}',
+      'singular' => 'Ключница',
+      'feature' => 
+      array (
+        0 => '',
+      ),
+      'installType' => 
+      array (
+        0 => '',
+      ),
+    ),
+  ),
 ) ;
 $Ca = array (
-  0 => 'Аксессуары',
-  1 => 'Декор ',
-  2 => 'Лампы',
-  3 => 'Люстры',
-  4 => 'Магнитные трековые системы',
-  5 => 'Настенные светильники и бра',
-  6 => 'Настольные лампы и ночники',
-  7 => 'Офисное освещение',
-  8 => 'Подвесные светильники',
-  9 => 'Подсветки',
-  10 => 'Потолочные светильники',
-  11 => 'Праздничное освещение',
-  12 => 'Светодиодные ленты и комплектующие',
-  13 => 'Специализированные светильники',
-  14 => 'Споты',
-  15 => 'Торшеры',
-  16 => 'Точечные светильники',
-  17 => 'Трековые системы',
-  18 => 'Уличное освещение',
-  19 => 'Электроустановочные изделия',
+  0 => 'Люстры',
+  1 => 'Подвесные светильники',
+  2 => 'Потолочные светильники',
+  3 => 'Настенные светильники и бра',
+  4 => 'Настольные лампы и ночники',
+  5 => 'Точечные светильники',
+  6 => 'Споты',
+  7 => 'Торшеры',
+  8 => 'Трековые системы',
+  9 => 'Магнитные трековые системы',
+  10 => 'Подсветки',
+  11 => 'Специализированные светильники',
+  12 => 'Уличное освещение',
+  13 => 'Офисное освещение',
+  14 => 'Праздничное освещение',
+  15 => 'Аксессуары',
+  16 => 'Лампы',
+  17 => 'Светодиодные ленты и комплектующие',
+  18 => 'Электроустановочные изделия',
+  19 => 'Декор ',
 ) ;
 $SubCa = array (
+  1 => 'Потолочные люстры',
+  2 => 'Подвесные люстры',
+  3 => 'Люстры на штанге',
+  4 => 'Каскадные люстры',
   0 => NULL,
-  1 => 'Аварийные светильники',
-  2 => 'Аксессуары для бра',
-  3 => 'Аксессуары для люстр',
-  4 => 'Аксессуары для настольных ламп',
-  5 => 'Аксессуары для подвесных и потолочных светильников',
-  6 => 'Аксессуары для спотов',
-  7 => 'Аксессуары для торшеров',
-  8 => 'Аксессуары для точечных светильников',
-  9 => 'Аксессуары для уличных светильников',
-  10 => 'Бактерицидные светильники',
-  11 => 'Белт-лайт',
-  12 => 'Блоки питания',
-  13 => 'Бра с двумя плафонами',
-  14 => 'Бра с одним плафоном',
-  15 => 'Бра с тремя и более плафонами',
-  16 => 'Выключатели, переключатели',
-  17 => 'Газонные светильники',
-  18 => 'Галогенные лампы',
-  19 => 'Гирлянды',
-  20 => 'Готовые комплекты',
-  21 => 'Готовые трековые системы',
-  22 => 'Грунтовые светильники',
-  23 => 'Датчики движения',
-  24 => 'Даунлайты',
-  25 => 'Декоративные настольные лампы',
-  26 => 'Декоративные подсветки',
-  27 => 'Детские настольные лампы',
-  28 => 'Диско-шары',
-  29 => 'Дюралайт',
-  30 => 'Елочные игрушки',
-  31 => 'Звонки',
-  32 => 'Зеркала',
-  33 => 'Интерьерные украшения',
-  34 => 'Искусственные елки',
-  35 => 'Кабели и изоляторы',
-  36 => 'Кабинетные настольные лампы',
-  37 => 'Карданные светильники',
-  38 => 'Картины',
-  39 => 'Каскадные люстры',
-  40 => 'Клеммы',
-  41 => 'Ключницы',
-  42 => 'Кольцевые лампы',
-  43 => 'Комплектующие для лент',
-  44 => 'Комплектующие для магнитных треков',
-  45 => 'Комплектующие для профилей',
-  46 => 'Комплектующие для трековых систем',
-  47 => 'Консольные светильники',
-  48 => 'Лампы накаливания',
-  49 => 'Ландшафтные светильники',
-  50 => 'Линейные светильники',
-  51 => 'Лицевые панели и заглушки',
-  52 => 'Люстры на штанге',
-  53 => 'Магнитные трековые светильники',
-  54 => 'Магнитные шинопроводы',
-  55 => 'Мебельные светильники',
-  56 => 'Модульные картины',
-  57 => 'Модульные светильники',
-  58 => 'Настенно-потолочные светильники',
-  59 => 'Настенные светильники',
-  60 => 'Новогодние подвесы',
-  61 => 'Ночники',
-  62 => 'Офисные настольные лампы',
-  63 => 'Парковые светильники',
-  64 => 'Патроны',
-  65 => 'Подвесные люстры',
-  66 => 'Подводные светильники',
-  67 => 'Подсветки для зеркал',
-  68 => 'Подсветки для картин',
-  69 => 'Подсветки для лестниц',
-  70 => 'Постеры',
-  71 => 'Потолочные люстры',
-  72 => 'Проекторы',
-  73 => 'Прожекторы',
-  74 => 'Промышленные светильники',
-  75 => 'Профили для лент',
-  76 => 'Разветвители и переходники',
-  77 => 'Рамки',
-  78 => 'Распаячные коробки',
-  79 => 'Реле',
-  80 => 'Розетки',
-  81 => 'Светильники армстронг',
-  82 => 'Светильники грильято',
-  83 => 'Светильники для растений',
-  84 => 'Светильники с лупой',
-  85 => 'Светодиодные деревья ',
-  86 => 'Светодиодные лампы',
-  87 => 'Светодиодные ленты',
-  88 => 'Светодиодные панели',
-  89 => 'Светодиодные свечи и подсвечники',
-  90 => 'Светодиодные фигуры',
-  91 => 'Соляные лампы',
-  92 => 'Споты с двумя плафонами',
-  93 => 'Споты с одним плафоном',
-  94 => 'Споты с тремя и более плафонами',
-  95 => 'Средства для очистки',
-  96 => 'Таймеры',
-  97 => 'Терморегуляторы',
-  98 => 'Торшеры с двумя и более плафонами',
-  99 => 'Торшеры с одним плафоном',
-  100 => 'Точечные встраиваемые светильники',
-  101 => 'Точечные накладные светильники',
-  102 => 'Точечные подвесные светильники',
-  103 => 'Трековые светильники',
-  104 => 'Тросовые системы',
-  105 => 'Тротуарные светильники',
-  106 => 'Удлинители и сетевые фильтры',
-  107 => 'Уличные настенные светильники',
-  108 => 'Уличные подвесные светильники',
-  109 => 'Уличные потолочные светильники',
-  110 => 'Управление светодиодными лентами',
-  111 => 'Управление светом ',
-  112 => 'Фасадные светильники',
-  113 => 'Фонарики',
-  114 => 'Цветы',
-  115 => 'Часы',
-  116 => 'Шинопроводы',
-  117 => 'Энергосберегающие лампы',
+  5 => 'Настенные светильники',
+  6 => 'Настенно-потолочные светильники',
+  7 => 'Бра с одним плафоном',
+  8 => 'Бра с двумя плафонами',
+  9 => 'Бра с тремя и более плафонами',
+  10 => 'Декоративные настольные лампы',
+  11 => 'Офисные настольные лампы',
+  12 => 'Кабинетные настольные лампы',
+  13 => 'Ночники',
+  14 => 'Детские настольные лампы',
+  15 => 'Точечные встраиваемые светильники',
+  16 => 'Точечные накладные светильники',
+  17 => 'Точечные подвесные светильники',
+  18 => 'Споты с одним плафоном',
+  19 => 'Споты с двумя плафонами',
+  20 => 'Споты с тремя и более плафонами',
+  21 => 'Торшеры с одним плафоном',
+  22 => 'Торшеры с двумя и более плафонами',
+  23 => 'Трековые светильники',
+  24 => 'Шинопроводы',
+  25 => 'Готовые трековые системы',
+  26 => 'Тросовые системы',
+  27 => 'Комплектующие для трековых систем',
+  28 => 'Магнитные трековые светильники',
+  29 => 'Магнитные шинопроводы',
+  30 => 'Комплектующие для магнитных треков',
+  31 => 'Подсветки для картин',
+  32 => 'Подсветки для зеркал',
+  33 => 'Подсветки для лестниц',
+  34 => 'Декоративные подсветки',
+  35 => 'Мебельные светильники',
+  36 => 'Светильники для растений',
+  37 => 'Бактерицидные светильники',
+  38 => 'Светильники с лупой',
+  39 => 'Кольцевые лампы',
+  40 => 'Соляные лампы',
+  41 => 'Промышленные светильники',
+  42 => 'Аварийные светильники',
+  43 => 'Фасадные светильники',
+  44 => 'Ландшафтные светильники',
+  45 => 'Парковые светильники',
+  46 => 'Консольные светильники',
+  47 => 'Уличные настенные светильники',
+  48 => 'Уличные потолочные светильники',
+  49 => 'Уличные подвесные светильники',
+  50 => 'Грунтовые светильники',
+  51 => 'Газонные светильники',
+  52 => 'Тротуарные светильники',
+  53 => 'Подводные светильники',
+  54 => 'Прожекторы',
+  55 => 'Фонарики',
+  56 => 'Даунлайты',
+  57 => 'Линейные светильники',
+  58 => 'Модульные светильники',
+  59 => 'Карданные светильники',
+  60 => 'Светодиодные панели',
+  61 => 'Светильники грильято',
+  62 => 'Светильники армстронг',
+  63 => 'Гирлянды',
+  64 => 'Новогодние подвесы',
+  65 => 'Белт-лайт',
+  66 => 'Дюралайт',
+  67 => 'Светодиодные фигуры',
+  68 => 'Светодиодные деревья ',
+  69 => 'Интерьерные украшения',
+  70 => 'Проекторы',
+  71 => 'Диско-шары',
+  72 => 'Светодиодные свечи и подсвечники',
+  73 => 'Аксессуары для люстр',
+  74 => 'Аксессуары для подвесных и потолочных светильников',
+  75 => 'Аксессуары для бра',
+  76 => 'Аксессуары для настольных ламп',
+  77 => 'Аксессуары для точечных светильников',
+  78 => 'Аксессуары для спотов',
+  79 => 'Аксессуары для уличных светильников',
+  80 => 'Средства для очистки',
+  81 => 'Аксессуары для торшеров',
+  82 => 'Светодиодные лампы',
+  83 => 'Галогенные лампы',
+  84 => 'Лампы накаливания',
+  85 => 'Энергосберегающие лампы',
+  86 => 'Светодиодные ленты',
+  87 => 'Управление светодиодными лентами',
+  88 => 'Блоки питания',
+  89 => 'Профили для лент',
+  90 => 'Комплектующие для лент',
+  91 => 'Комплектующие для профилей',
+  92 => 'Готовые комплекты',
+  93 => 'Розетки',
+  94 => 'Выключатели, переключатели',
+  95 => 'Рамки',
+  96 => 'Лицевые панели и заглушки',
+  97 => 'Управление светом ',
+  98 => 'Терморегуляторы',
+  99 => 'Датчики движения',
+  100 => 'Реле',
+  101 => 'Таймеры',
+  102 => 'Звонки',
+  103 => 'Удлинители и сетевые фильтры',
+  104 => 'Кабели и изоляторы',
+  105 => 'Патроны',
+  106 => 'Разветвители и переходники',
+  107 => 'Распаячные коробки',
+  108 => 'Клеммы',
+  109 => 'Зеркала',
+  110 => 'Картины',
+  111 => 'Елочные игрушки',
+  112 => 'Часы',
+  113 => 'Искусственные елки',
+  114 => 'Постеры',
+  115 => 'Цветы',
+  116 => 'Модульные картины',
+  117 => 'Ключницы',
 ) ;
 return [
 'categories'=> $categories,

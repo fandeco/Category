@@ -88,15 +88,15 @@
 	}
 	$ec = $categories + $categoriesKeys;
 	$es = $subCategories + $subCategoriesKeys;
-	sort($list);
-	sort($ec);
-	sort($es);
-	sort($data);
-	sort($originalsCategories);
-	sort($originalsSubCategories);
+	ksort($list);
+	ksort($ec);
+	ksort($es);
+	ksort($data);
+	ksort($originalsCategories);
+	ksort($originalsSubCategories);
 	$el    = var_export($list, 1);
-	$ec    = var_export($categories + $categoriesKeys, 1);
-	$es    = var_export($subCategories + $subCategoriesKeys, 1);
+	$ec    = var_export($ec, 1);
+	$es    = var_export($es, 1);
 	$ed    = var_export($data, 1);
 	$Ca    = var_export($originalsCategories, 1);
 	$SubCa = var_export($originalsSubCategories, 1);
