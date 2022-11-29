@@ -86,6 +86,14 @@
 			break;
 		}
 	}
+	$ec = $categories + $categoriesKeys;
+	$es = $subCategories + $subCategoriesKeys;
+	sort($list);
+	sort($ec);
+	sort($es);
+	sort($data);
+	sort($originalsCategories);
+	sort($originalsSubCategories);
 	$el    = var_export($list, 1);
 	$ec    = var_export($categories + $categoriesKeys, 1);
 	$es    = var_export($subCategories + $subCategoriesKeys, 1);
