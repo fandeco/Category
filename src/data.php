@@ -101,6 +101,7 @@ $subCategories = array (
   'мебельныесветильники' => 35,
   'модульныекартины' => 116,
   'модульныесветильники' => 58,
+  'монтажныекоробки' => 107,
   'настеннопотолочныесветильники' => 6,
   'настенныесветильники' => 5,
   'новогодниеподвесы' => 64,
@@ -120,8 +121,7 @@ $subCategories = array (
   'промышленныесветильники' => 41,
   'профилидлялент' => 89,
   'разветвителиипереходники' => 106,
-  'рамки' => 95,
-  'распаячныекоробки' => 107,
+  'рамкиисуппорты' => 95,
   'реле' => 100,
   'розетки' => 93,
   'светильникиармстронг' => 62,
@@ -255,7 +255,7 @@ $subCategories = array (
   92 => 'готовыекомплекты',
   93 => 'розетки',
   94 => 'выключателипереключатели',
-  95 => 'рамки',
+  95 => 'рамкиисуппорты',
   96 => 'лицевыепанелиизаглушки',
   97 => 'управлениесветом',
   98 => 'терморегуляторы',
@@ -267,7 +267,7 @@ $subCategories = array (
   104 => 'кабелииизоляторы',
   105 => 'патроны',
   106 => 'разветвителиипереходники',
-  107 => 'распаячныекоробки',
+  107 => 'монтажныекоробки',
   108 => 'клеммы',
   109 => 'зеркала',
   110 => 'картины',
@@ -1802,7 +1802,7 @@ $data = array (
   array (
     93 => 
     array (
-      'template' => 'Розетка {$article}',
+      'template' => 'Розетка Тип розетки цвет IP {$vendor} {$collection} {$article}',
       'singular' => 'Розетка',
       'feature' => 
       array (
@@ -1832,13 +1832,18 @@ $data = array (
     ),
     94 => 
     array (
-      'template' => 'Коммутатор {$article}',
-      'singular' => 'Коммутатор',
+      'template' => '{$osobennost} {$article}',
+      'singular' => NULL,
       'feature' => 
       array (
-        0 => 'одноклавишные',
-        1 => 'двухклавишные',
-        2 => 'трехклавишные',
+        0 => 'сенсорные',
+        1 => 'клавишные (одноклавишные',
+        2 => 'двухклавишные',
+        3 => 'трехклавишные)',
+        4 => 'кнопочные',
+        5 => 'веревочные',
+        6 => 'повортные',
+        7 => 'карточные',
       ),
       'installType' => 
       array (
@@ -1848,7 +1853,7 @@ $data = array (
     ),
     95 => 
     array (
-      'template' => 'Рамка {$article}',
+      'template' => 'Рамка кол-во постов цвет {$vendor} {$collection} {$article}',
       'singular' => 'Рамка',
       'feature' => 
       array (
@@ -1862,7 +1867,7 @@ $data = array (
     ),
     96 => 
     array (
-      'template' => 'Панель {$article}',
+      'template' => '{$osobennost} для какого товара {$vendor} {$collection} {$article}',
       'singular' => 'Панель',
       'feature' => 
       array (
@@ -1875,7 +1880,7 @@ $data = array (
     ),
     97 => 
     array (
-      'template' => '{$osobennost} {$article}, ',
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
       'singular' => 'Светорегулятор',
       'feature' => 
       array (
@@ -1903,7 +1908,7 @@ $data = array (
     ),
     99 => 
     array (
-      'template' => 'Датчик движения {$article}',
+      'template' => 'Датчик движения {$vendor} {$collection} {$article}',
       'singular' => 'Датчик движения',
       'feature' => 
       array (
@@ -1916,7 +1921,7 @@ $data = array (
     ),
     100 => 
     array (
-      'template' => 'Реле wifi {$article}',
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
       'singular' => 'Реле wifi',
       'feature' => 
       array (
@@ -1929,7 +1934,7 @@ $data = array (
     ),
     101 => 
     array (
-      'template' => 'Таймер {$article}',
+      'template' => 'Таймер {$vendor} {$collection} {$article}',
       'singular' => 'Таймер',
       'feature' => 
       array (
@@ -1942,7 +1947,7 @@ $data = array (
     ),
     102 => 
     array (
-      'template' => 'Звонок {$article}',
+      'template' => 'Звонок {$vendor} {$collection} {$article}',
       'singular' => 'Звонок',
       'feature' => 
       array (
@@ -1955,7 +1960,7 @@ $data = array (
     ),
     103 => 
     array (
-      'template' => 'Розетка {$article}',
+      'template' => '{$osobennost} кол-во постов {$vendor} {$collection} {$article}',
       'singular' => 'Розетка',
       'feature' => 
       array (
@@ -1968,7 +1973,7 @@ $data = array (
     ),
     104 => 
     array (
-      'template' => 'Кабель {$article}',
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
       'singular' => 'Кабель',
       'feature' => 
       array (
@@ -1981,7 +1986,7 @@ $data = array (
     ),
     105 => 
     array (
-      'template' => 'Патрон {$article}',
+      'template' => 'Патрон {$vendor} {$collection} {$article}',
       'singular' => 'Патрон',
       'feature' => 
       array (
@@ -1994,7 +1999,7 @@ $data = array (
     ),
     106 => 
     array (
-      'template' => 'Разветвитель {$article}',
+      'template' => '{$osobennost} {$vendor} {$collection} {$article}',
       'singular' => 'Разветвитель',
       'feature' => 
       array (
@@ -2007,7 +2012,7 @@ $data = array (
     ),
     107 => 
     array (
-      'template' => 'Распаячная коробка {$article}',
+      'template' => 'Монтажная коробка {$vendor} {$collection} {$article}',
       'singular' => 'Распаячная коробка',
       'feature' => 
       array (
@@ -2020,7 +2025,7 @@ $data = array (
     ),
     108 => 
     array (
-      'template' => 'Клемма {$article}',
+      'template' => 'Клемма {$vendor} {$collection} {$article}',
       'singular' => 'Клемма',
       'feature' => 
       array (
@@ -2273,7 +2278,7 @@ $SubCa = array (
   92 => 'Готовые комплекты',
   93 => 'Розетки',
   94 => 'Выключатели, переключатели',
-  95 => 'Рамки',
+  95 => 'Рамки и суппорты',
   96 => 'Лицевые панели и заглушки',
   97 => 'Управление светом ',
   98 => 'Терморегуляторы',
@@ -2285,7 +2290,7 @@ $SubCa = array (
   104 => 'Кабели и изоляторы',
   105 => 'Патроны',
   106 => 'Разветвители и переходники',
-  107 => 'Распаячные коробки',
+  107 => 'Монтажные коробки',
   108 => 'Клеммы',
   109 => 'Зеркала',
   110 => 'Картины',
