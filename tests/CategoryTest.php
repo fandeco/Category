@@ -22,11 +22,6 @@
 			parent::__construct($name, $data, $dataName);
 			$this->category = new Category();
 		}
-		public function testPOfig()
-		: void
-		{
-			$this->fail("Нормально все ");
-		}
 		/**
 		 * @return void
 		 */
