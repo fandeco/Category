@@ -16,8 +16,13 @@
             "email": "Traineratwot@yandex.ru"
         }
     ],
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    },
     "require": {
-        "php": ">=7.4"
+        "php": "7.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
