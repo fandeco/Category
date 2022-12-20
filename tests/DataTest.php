@@ -7,7 +7,6 @@
 	 */
 
 	namespace fandeco\test;
-	require_once "../vendor/autoload.php";
 
 	use fandeco\category\Category;
 	use fandeco\category\CategoryExtension;

@@ -7,7 +7,6 @@
 	 */
 
 	namespace fandeco\test;
-	require_once "../vendor/autoload.php";
 
 	use Exception;
 	use fandeco\category\Description;

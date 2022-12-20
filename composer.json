@@ -8,7 +8,7 @@
         }
     },
     "scripts":{
-        "tests": "phpunit --bootstrap bootstrap.php"
+        "phpUnit:tests": "phpunit --bootstrap bootstrap.php"
     },
     "authors": [
         {
