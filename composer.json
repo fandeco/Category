@@ -7,6 +7,9 @@
             "fandeco\\category\\": "src/"
         }
     },
+    "scripts":{
+        "tests": "phpunit --bootstrap bootstrap.php"
+    },
     "authors": [
         {
             "name": "Kirill",
