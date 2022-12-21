@@ -62,4 +62,8 @@
 
 			}
 		}
+		public function testData4(){
+			$a = $this->category->getAllCategory();
+			$this->assertEqualsWithDelta(count($a),10,100);
+		}
 	}

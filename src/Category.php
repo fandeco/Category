@@ -262,4 +262,23 @@
 				'|'  => '~',
 			]);
 		}
+
+		/**
+		 * @throws CategoryExtension
+		 */
+		public function getAllCategory()
+		{
+			$result = [];
+			foreach ($this->categories as $key => $value) {
+				if (is_int($key)) {
+					$value          = $this->getCategoryRealNameById($key);
+					$result[$value] = $this->getSubCategoriesByCategory($key);
+					foreach ($result[$value] as $id => $sub) {
+						$result[$value][$id] = $this->getSubCategoryRealNameById($id);
+					}
+
+				}
+			}
+			return $result;
+		}
 	}
