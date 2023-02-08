@@ -8,7 +8,7 @@
         }
     },
     "scripts":{
-        "up:tests": "phpunit --teamcity --bootstrap bootstrap.php",
+        "phpUnit:tests": "phpunit --teamcity --bootstrap bootstrap.php",
         "up:parser": "php ./src/parcer.php"
     },
     "authors": [
