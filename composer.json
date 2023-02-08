@@ -22,8 +22,10 @@
         "phpoffice/phpspreadsheet": "^1.23",
         "mockery/mockery": "^1.4"
     },
-    "platform": {
-        "php": "7.4"
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
     },
     "autoload-dev": {
         "psr-4": {
