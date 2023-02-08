@@ -8,4 +8,4 @@ composer.phar
 .phpunit.result.cache
 category.xlsx
 
-.project-manager/
+.project-manager/!/composer.phar
