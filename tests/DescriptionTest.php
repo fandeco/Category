@@ -54,7 +54,7 @@
 		public function testValidate()
 		: void
 		{
-			$this->description->add($this->getProduct(126613));
+			$this->description->add($this->getProduct(15887));
 			$this->description->gen();
 			echo $this->description->last_without_html;
 
@@ -64,7 +64,7 @@
 		public function testValidate2()
 		: void
 		{
-			[$result, $raw, $disc] = $this->description->description($this->getProduct(126613));
+			[$result, $raw, $disc] = $this->description->description($this->getProduct(15887));
 			echo $raw;
 
 			$this->assertTrue(TRUE);

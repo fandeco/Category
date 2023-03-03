@@ -237,9 +237,9 @@ class Description
     {
         foreach ($this->items as $item) {
             [$result, $raw, $disc] = $this->description($item);
-            $this->discriptions[(string)$artikul_1c] = $result;
-            $this->disc_without_html[(string)$artikul_1c] = $raw;
-            $this->Json[(string)$artikul_1c] = $disc;
+//            $this->discriptions[(string)$artikul_1c] = $result;
+//            $this->disc_without_html[(string)$artikul_1c] = $raw;
+//            $this->Json[(string)$artikul_1c] = $disc;
             $this->last_without_html = $raw;
             $this->last = $result;
         }
@@ -269,7 +269,7 @@ class Description
             $weight = $item['weight'];
             $forma = $item['forma'];
             $ip_class = $item['ip_class'];
-            $style = $item['style'];
+            $style = $item['style']?? null;
             $plafond_color = $item['plafond_color'];
             $plafond_mat = $item['plafond_material'];
             $armature_color = $item['armature_color'];
