@@ -10,3 +10,4 @@ category.xlsx
 
 .project-manager/!/composer.phar
 composer.lock
+/old_categories/
