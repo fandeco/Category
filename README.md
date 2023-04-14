@@ -85,4 +85,4 @@ composer up:build
 2) ~~положить в папу с проектом~~
 3) ~~открыть файл `src/parcer.php` и изменить путь до файла в константе `InputFileName`~~
 4) ~~запустить скрипт `src/parcer.php`~~
-5) ~~запустить тесты, если тесты пройдены git push, и в проектах composer update~~
+5) запустить тесты, если тесты пройдены git push, и в проектах composer update
