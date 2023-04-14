@@ -9,7 +9,8 @@
     },
     "scripts":{
         "phpUnit:tests": "phpunit --teamcity --bootstrap bootstrap.php",
-        "up:parser": "php ./src/parcer.php"
+        "up:parser_depricated": "php ./src/parcer.php",
+        "up:build": "cd TOOL && npm i && node index.js"
     },
     "authors": [
         {

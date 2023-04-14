@@ -36,10 +36,11 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
     let feature = '';
     let installType = '';
     let singular = '';
-    const output = [];
+    const output = new Set();
     rows.forEach((row) => {
-        if (!row['Тип товара интернет']) {
-            return false;
+        if (row['Тип товара интернет'] && row['Тип товара интернет'] !== category) {
+            category = '';
+            subCategory = '';
         }
         category = row['Тип товара интернет'] || category;
         subCategory = row['Вид светильника интернет'] || subCategory;
@@ -47,7 +48,8 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
         feature = row['Доп.фильтры'] || feature;
         installType = row['Тип монтажа/установки'] || installType;
         singular = row['Единственное число для товара'] || singular;
-        output.push({
+        console.log(category + '->' + subCategory);
+        output.add({
             category,
             subCategory,
             template,
@@ -57,7 +59,7 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
         });
     });
     const php = path_1.default.join(__dirname, 'converter.php');
-    fs_1.default.writeFileSync(path_1.default.join(__dirname, 'output.json'), JSON.stringify(output));
+    fs_1.default.writeFileSync(path_1.default.join(__dirname, 'output.json'), JSON.stringify([...output]));
     (0, child_process_1.exec)(`php ${php}`);
     // fs.unlinkSync(path.join(__dirname, 'output.json'));
 });

@@ -26,17 +26,18 @@ const start = async () => {
 	let installType  = ''
 	let singular     = ''
 
-	const output: {
+	const output = new Set<{
 		category: string
 		subCategory: string
 		template: string
 		feature: string
 		installType: string
 		singular: string
-	}[] = []
+	}>()
 	rows.forEach((row: GoogleSpreadsheetRow) => {
-		if (!row['Вид светильника интернет']) {
-			return false;
+		if (row['Тип товара интернет'] && row['Тип товара интернет'] !== category) {
+			category    = ''
+			subCategory = ''
 		}
 		category    = row['Тип товара интернет'] || category
 		subCategory = row['Вид светильника интернет'] || subCategory
@@ -44,17 +45,18 @@ const start = async () => {
 		feature     = row['Доп.фильтры'] || feature
 		installType = row['Тип монтажа/установки'] || installType
 		singular    = row['Единственное число для товара'] || singular
-		output.push({
-						category,
-						subCategory,
-						template,
-						feature,
-						installType,
-						singular
-					})
+		console.log(category + '->' + subCategory)
+		output.add({
+					   category,
+					   subCategory,
+					   template,
+					   feature,
+					   installType,
+					   singular
+				   })
 	})
 	const php = path.join(__dirname, 'converter.php')
-	fs.writeFileSync(path.join(__dirname, 'output.json'), JSON.stringify(output))
+	fs.writeFileSync(path.join(__dirname, 'output.json'), JSON.stringify([...output]))
 	exec(`php ${php}`);
 	// fs.unlinkSync(path.join(__dirname, 'output.json'));
 }

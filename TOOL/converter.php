@@ -23,11 +23,6 @@
 	foreach ($table as $k => $row) {
 		$category    = $row['category'];
 		$subCategory = $row['subCategory'];
-		$template    = $row['template'];
-		$feature     = $row['feature'];
-		$installType = $row['installType'];
-		$singular    = $row['singular'];
-
 
 		$categoryKEY     = raw_text($category);
 		$subCategoryKEY  = raw_text($subCategory);
@@ -38,6 +33,7 @@
 	$subCategories     = array_unique($subCategories);
 	$categoriesKeys    = array_flip($categories);
 	$subCategoriesKeys = array_flip($subCategories);
+
 	foreach ($table as $k => $row) {
 		$category       = $row['category'];
 		$subCategory    = $row['subCategory'];
@@ -78,10 +74,6 @@
 				return trim($str, ' "');
 			}, explode(',', $installType)),
 		];
-
-		if ($k >= 120) {
-			break;
-		}
 	}
 	$ec = $categories + $categoriesKeys;
 	$es = $subCategories + $subCategoriesKeys;
