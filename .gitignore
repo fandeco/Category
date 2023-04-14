@@ -12,3 +12,4 @@ category.xlsx
 composer.lock
 /old_categories/
 TOOL/node_modules
+TOOL/output.json
