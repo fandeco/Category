@@ -77,8 +77,12 @@ $disc//  Массив описания для seo и иных шаблонов
 
 # ПРОЦЕСС ОБНОВЛЕНИЯ
 
-1) скачать [Проект по новым категориям](https://docs.google.com/spreadsheets/d/1tKIDh4Lo4LjGdXGw5-UzO8ZCRkCDkNYMw4wjB3sU7MM/edit#gid=33988330) в формате `xlsx`
-2) положить в папу с проектом
-3) открыть файл `src/parcer.php` и изменить путь до файла в константе `InputFileName`
-4) запустить скрипт `src/parcer.php`
-5) запустить тесты, если тесты пройдены git push, и в проектах composer update
+```bash
+composer up:build
+```
+
+1) ~~скачать [Проект по новым категориям](https://docs.google.com/spreadsheets/d/1tKIDh4Lo4LjGdXGw5-UzO8ZCRkCDkNYMw4wjB3sU7MM/edit#gid=33988330) в формате `xlsx`~~
+2) ~~положить в папу с проектом~~
+3) ~~открыть файл `src/parcer.php` и изменить путь до файла в константе `InputFileName`~~
+4) ~~запустить скрипт `src/parcer.php`~~
+5) ~~запустить тесты, если тесты пройдены git push, и в проектах composer update~~
