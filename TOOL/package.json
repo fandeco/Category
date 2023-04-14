@@ -1,0 +1,15 @@
+{
+  "name": "tool",
+  "version": "1.0.0",
+  "scripts": {
+    "run": "ts-node index.ts"
+  },
+  "dependencies": {
+    "google-spreadsheet": "^3.3.0",
+    "typescript": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "@types/google-spreadsheet": "^3.3.1"
+  }
+}
