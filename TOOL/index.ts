@@ -58,6 +58,6 @@ const start = async () => {
 	const php = path.join(__dirname, 'converter.php')
 	fs.writeFileSync(path.join(__dirname, 'output.json'), JSON.stringify([...output]))
 	exec(`php ${php}`);
-	fs.unlinkSync(path.join(__dirname, 'output.json'));
+	// fs.unlinkSync(path.join(__dirname, 'output.json'));
 }
 start().catch(console.error);
