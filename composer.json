@@ -9,6 +9,7 @@
     },
     "scripts":{
         "phpUnit:tests": "phpunit --teamcity --bootstrap bootstrap.php",
+        "tests": "phpunit --bootstrap bootstrap.php",
         "up:parser_depricated": "php ./src/parcer.php",
         "up:build": "cd TOOL && npm i && node index.js"
     },
