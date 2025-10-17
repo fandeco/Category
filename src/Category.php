@@ -209,10 +209,8 @@ class Category
             $subCategory = $this->getSubCategoryId($subCategory);
         }
 
-
         $all_data = $this->getData();
-
-        if (isset($allData[$category][$subCategory])) {
+        if (!empty($all_data[$category][$subCategory])) {
             return $all_data[$category][$subCategory];
         }
 
