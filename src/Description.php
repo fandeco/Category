@@ -68,7 +68,7 @@ class Description
             'Никель' => ' цвета Никеля',
             'Сиреневый' => 'Сиреневый',
             'Дерево' => ' цвета Дерева',
-            'мульти' => NULL,
+            'мульти' => null,
             'Бронзовый' => ' цвета Бронзы',
             'Бирюзовый' => 'Бирюзовый',
             'Коньячный' => ' Коньячного цвета',
@@ -208,6 +208,9 @@ class Description
     public $last_without_html = '';
     public Category $categoryValidator;
     public $singulars = [];
+    public ?string $result;
+    public ?string $raw;
+    public ?array $disc;
 
     /**
      * @param array<String,mixed> $items
@@ -217,6 +220,87 @@ class Description
         $this->items = $items;
         $this->categoryValidator = new Category();
         $this->category = $this->categoryValidator->originalsCategories;
+    }
+
+    /**
+     * @param string $str
+     * @return string
+     */
+    public static function DeUnicode(string $str)
+    { // декодирование unicode
+        $converter = [
+            '\u0410' => 'А',
+            '\u0430' => 'а',
+            '\u0411' => 'Б',
+            '\u0431' => 'б',
+            '\u0412' => 'В',
+            '\u0432' => 'в',
+            '\u0413' => 'Г',
+            '\u0433' => 'г',
+            '\u0414' => 'Д',
+            '\u0434' => 'д',
+            '\u0415' => 'Е',
+            '\u0435' => 'е',
+            '\u0401' => 'Ё',
+            '\u0451' => 'ё',
+            '\u0416' => 'Ж',
+            '\u0436' => 'ж',
+            '\u0417' => 'З',
+            '\u0437' => 'з',
+            '\u0418' => 'И',
+            '\u0438' => 'и',
+            '\u0419' => 'Й',
+            '\u0439' => 'й',
+            '\u041a' => 'К',
+            '\u043a' => 'к',
+            '\u041b' => 'Л',
+            '\u043b' => 'л',
+            '\u041c' => 'М',
+            '\u043c' => 'м',
+            '\u041d' => 'Н',
+            '\u043d' => 'н',
+            '\u041e' => 'О',
+            '\u043e' => 'о',
+            '\u041f' => 'П',
+            '\u043f' => 'п',
+            '\u0420' => 'Р',
+            '\u0440' => 'р',
+            '\u0421' => 'С',
+            '\u0441' => 'с',
+            '\u0422' => 'Т',
+            '\u0442' => 'т',
+            '\u0423' => 'У',
+            '\u0443' => 'у',
+            '\u0424' => 'Ф',
+            '\u0444' => 'ф',
+            '\u0425' => 'Х',
+            '\u0445' => 'х',
+            '\u0426' => 'Ц',
+            '\u0446' => 'ц',
+            '\u0427' => 'Ч',
+            '\u0447' => 'ч',
+            '\u0428' => 'Ш',
+            '\u0448' => 'ш',
+            '\u0429' => 'Щ',
+            '\u0449' => 'щ',
+            '\u042a' => 'Ъ',
+            '\u044a' => 'ъ',
+            '\u042b' => 'Ы',
+            '\u044b' => 'ы',
+            '\u042c' => 'Ь',
+            '\u044c' => 'ь',
+            '\u042d' => 'Э',
+            '\u044d' => 'э',
+            '\u042e' => 'Ю',
+            '\u044e' => 'ю',
+            '\u042f' => 'Я',
+            '\u044f' => 'я',
+            '["' => null,
+            '"]' => null,
+            'globo_new' => 'Globo',
+            'globo-new' => 'Globo',
+        ];
+        return strtr($str, $converter);
     }
 
     /**
@@ -246,12 +330,6 @@ class Description
         return $this;
     }
 
-    public function fromArray(array $data)
-    {
-        $this->description($data);
-        return $this;
-    }
-
     public function description($item)
     {
         $disc = [];
@@ -269,7 +347,7 @@ class Description
             $weight = $item['weight'];
             $forma = $item['forma'];
             $ip_class = $item['ip_class'];
-            $style = $item['style']?? null;
+            $style = $item['style'] ?? null;
             $plafond_color = $item['plafond_color'];
             $plafond_mat = $item['plafond_material'];
             $armature_color = $item['armature_color'];
@@ -283,7 +361,7 @@ class Description
             $ploshad_osvesv = $item['ploshad_osvesheniya'];
 
             //fish
-            $fish = NULL;
+            $fish = null;
             if ($category && self::indexSearch($category, $this->ignore)) {
                 return '';
             }
@@ -299,11 +377,14 @@ class Description
             if ($vendor && !is_numeric($vendor)) {
                 $vendor = strtr((string)$vendor, $this->vendor);
             } else {
-                $vendor = $item['vendor.name_1c'] ?: NULL;
+                $vendor = $item['vendor.name_1c'] ?: null;
             }
             //sub_category
             try {
-                [$category, $sub_category] = $this->categoryValidator->validate((string)$category, (string)$sub_category);
+                [$category, $sub_category] = $this->categoryValidator->validate(
+                    (string)$category,
+                    (string)$sub_category
+                );
                 $catData = $this->categoryValidator->getDataByCategory((string)$category, (string)$sub_category);
                 if (!empty($catData['singular'])) {
                     $cat = $catData['singular'];
@@ -339,10 +420,10 @@ class Description
             if ($style) {
                 $style = strtr($style[0], $this->style);
             } else {
-                $style = NULL;
+                $style = null;
             }
             //Размеры (ДхШхВ)
-            $size = NULL;
+            $size = null;
             if ((int)$length or (int)$width or (int)$height) {
                 $sz = ['length' => (float)$length, 'width' => (float)$width, 'height' => (float)$height];
                 $max = array_keys($sz, max($sz))[0];
@@ -377,29 +458,29 @@ class Description
                 $dim = self::format_len($diameter, $fom);
                 $diameter = 'Диаметр ' . $dim[0] . ' ' . $fom;
             } else {
-                $diameter = NULL;
+                $diameter = null;
             }
             //Форма
             if ($forma) {
                 $forma = strtr($forma[0], $this->forma);
                 $forma = 'Форма ' . $forma . '.';
             } else {
-                $forma = NULL;
+                $forma = null;
             }
             //арматура
             if ($armature_mat and $armature_color) {
                 $arma = 'материал/цвет арматуры ' . $armature_mat[0] . '/' . $armature_color[0] . '.';
             } else {
-                $arma = NULL;
+                $arma = null;
             }
             //Плафон
             if ($plafond_mat) {
                 $plafond = strtr($plafond_mat[0], $this->plafond_mat) . ' ';
             } else {
-                $plafond = NULL;
+                $plafond = null;
             }
             if ($plafond_color) {
-                if ($plafond == NULL) {
+                if ($plafond == null) {
                     $plafond = 'Плафон ';
                 }
                 $plafond .= strtr($plafond_color[0], $this->plafond_color);
@@ -409,21 +490,21 @@ class Description
                     $plafond .= '.';
                 }
             } else {
-                $plafond = NULL;
+                $plafond = null;
             }
             //пылевлагозащиты
             if ((int)$ip_class) {
                 $ip_class = 'Параметры пылевлагозащиты IP — ' . (int)$ip_class . '.';
             } else {
-                $ip_class = NULL;
+                $ip_class = null;
             }
             if ($country_orig) {
                 $country_orig = 'Страна происхождения бренда — ' . $country_orig . '.';
             } else {
-                $country_orig = NULL;
+                $country_orig = null;
             }
             //лампы и цоколи
-            $lamp = NULL;
+            $lamp = null;
             if ($num_of_lamp or $lamp_socket) {
                 $lamp = 'Использует ';
                 if ($num_of_lamp) {
@@ -457,7 +538,7 @@ class Description
                 $weight = self::format_weight($weight);
                 $weight = 'Вес с упаковкой ' . $weight[0] . ' ' . $weight[1];
             } else {
-                $weight = NULL;
+                $weight = null;
             }
             //interer
             if ($interer) {
@@ -472,7 +553,7 @@ class Description
             if ((float)$ploshad_osvesv > 0) {
                 $ploshad_osvesv = 'Площадь освещения охватывает ' . $ploshad_osvesv . ' m<span style="font-family: \'Arial\',serif">²</span>.';
             } else {
-                $ploshad_osvesv = NULL;
+                $ploshad_osvesv = null;
             }
             $plafond .= ' ' . $arma;
             $plafond = mb_strtolower($plafond);
@@ -495,17 +576,17 @@ class Description
             if ($item['tsvet_temp']) {
                 $style = 'Имеет приятный ' . $item['tsvet_temp'][0] . ' свет';
             } else {
-                $style = NULL;
+                $style = null;
             }
             if ($item['power']) {
                 $fish = 'Потребляет ' . $item['power'] . ' W.';
             } else {
-                $fish = NULL;
+                $fish = null;
             }
             if ($item['voltage']) {
                 $size = 'Рассчитана на напряжение ' . $item['voltage'] . ' V';
             } else {
-                $size = NULL;
+                $size = null;
             }
         }
         //сборка
@@ -556,147 +637,21 @@ class Description
         return [$result, $raw, $disc];
     }
 
-    public ?string $result;
-    public ?string $raw;
-    public ?array $disc;
-
-    /**
-     * @return string|null
-     */
-    public function html()
-    {
-        return $this->result;
-    }
-
-
-    /**
-     * @return string|null
-     */
-    public function raw()
-    {
-        return $this->raw;
-    }
-
-    /**
-     * @return array|null
-     */
-    public function disc()
-    {
-        return $this->disc;
-    }
-
-    /**
-     * @return array|null
-     */
-    public function toArray()
-    {
-        return $this->disc;
-    }
-
-
-    /**
-     * @return array|mixed
-     */
-    public function setSingular($text, $singular)
-    {
-        $this->singulars[$text] = $singular;
-        return $this;
-    }
-
-    /**
-     * @param string $str
-     * @param string $encoding
-     * @return false|string
-     */
-    public static function mb_ucfirst(string $str, $encoding = 'UTF-8')
-    {
-        $str = mb_ereg_replace('^[\ ]+', '', $str);
-        return mb_strtoupper(mb_substr($str, 0, 1, $encoding), $encoding) .
-            mb_substr($str, 1, mb_strlen($str), $encoding);
-    }
-
-    /**
-     * @param string $str
-     * @return string
-     */
-    public static function DeUnicode(string $str)
-    { // декодирование unicode
-        $converter = [
-            '\u0410' => 'А', '\u0430' => 'а',
-            '\u0411' => 'Б', '\u0431' => 'б',
-            '\u0412' => 'В', '\u0432' => 'в',
-            '\u0413' => 'Г', '\u0433' => 'г',
-            '\u0414' => 'Д', '\u0434' => 'д',
-            '\u0415' => 'Е', '\u0435' => 'е',
-            '\u0401' => 'Ё', '\u0451' => 'ё',
-            '\u0416' => 'Ж', '\u0436' => 'ж',
-            '\u0417' => 'З', '\u0437' => 'з',
-            '\u0418' => 'И', '\u0438' => 'и',
-            '\u0419' => 'Й', '\u0439' => 'й',
-            '\u041a' => 'К', '\u043a' => 'к',
-            '\u041b' => 'Л', '\u043b' => 'л',
-            '\u041c' => 'М', '\u043c' => 'м',
-            '\u041d' => 'Н', '\u043d' => 'н',
-            '\u041e' => 'О', '\u043e' => 'о',
-            '\u041f' => 'П', '\u043f' => 'п',
-            '\u0420' => 'Р', '\u0440' => 'р',
-            '\u0421' => 'С', '\u0441' => 'с',
-            '\u0422' => 'Т', '\u0442' => 'т',
-            '\u0423' => 'У', '\u0443' => 'у',
-            '\u0424' => 'Ф', '\u0444' => 'ф',
-            '\u0425' => 'Х', '\u0445' => 'х',
-            '\u0426' => 'Ц', '\u0446' => 'ц',
-            '\u0427' => 'Ч', '\u0447' => 'ч',
-            '\u0428' => 'Ш', '\u0448' => 'ш',
-            '\u0429' => 'Щ', '\u0449' => 'щ',
-            '\u042a' => 'Ъ', '\u044a' => 'ъ',
-            '\u042b' => 'Ы', '\u044b' => 'ы',
-            '\u042c' => 'Ь', '\u044c' => 'ь',
-            '\u042d' => 'Э', '\u044d' => 'э',
-            '\u042e' => 'Ю', '\u044e' => 'ю',
-            '\u042f' => 'Я', '\u044f' => 'я',
-            '["' => NULL, '"]' => NULL,
-            'globo_new' => 'Globo', 'globo-new' => 'Globo',
-        ];
-        return strtr($str, $converter);
-    }
-
-    /**
-     * @param int|float $n
-     * @param string $w1
-     * @param string $w2
-     * @param string $w3
-     * @return string
-     */
-    public static function plural($n, $w1, $w2, $w3)
-    {
-        if ($n != NULL) {
-            if ($n % 10 == 1 && $n % 100 != 11) {
-                return $w1;
-            }
-            if ($n % 10 >= 2 && $n % 10 <= 4 && ($n % 100 < 10 || $n % 100 >= 20)) {
-                return $w2;
-            }
-            return $w3;
-        }
-        return NULL;
-    }
-
     /**
      * @param null $str
      * @param array $array
      * @return bool
      */
-    public static function indexSearch($str = NULL, $array = [])
+    public static function indexSearch($str = null, $array = [])
     {
         foreach ($array as $value) {
             $str = mb_strtolower($str);
             $value = mb_strtolower($value);
-            if (stripos($str, $value) !== FALSE) {
-                return TRUE;
+            if (stripos($str, $value) !== false) {
+                return true;
             }
         }
-        return FALSE;
+        return false;
     }
 
     public static function format_len($s, $fom = 'def')
@@ -729,6 +684,27 @@ class Description
         return [round($size, 1), $fom];
     }
 
+    /**
+     * @param int|float $n
+     * @param string $w1
+     * @param string $w2
+     * @param string $w3
+     * @return string
+     */
+    public static function plural($n, $w1, $w2, $w3)
+    {
+        if ($n != null) {
+            if ($n % 10 == 1 && $n % 100 != 11) {
+                return $w1;
+            }
+            if ($n % 10 >= 2 && $n % 10 <= 4 && ($n % 100 < 10 || $n % 100 >= 20)) {
+                return $w2;
+            }
+            return $w3;
+        }
+        return null;
+    }
+
     public static function format_weight($s)
     {
         $size = (float)$s;
@@ -740,5 +716,64 @@ class Description
             $fom = 'kg';
         }
         return [round($size, 1), $fom];
+    }
+
+    /**
+     * @param string $str
+     * @param string $encoding
+     * @return false|string
+     */
+    public static function mb_ucfirst(string $str, $encoding = 'UTF-8')
+    {
+        $str = mb_ereg_replace('^[\ ]+', '', $str);
+        return mb_strtoupper(mb_substr($str, 0, 1, $encoding), $encoding) .
+            mb_substr($str, 1, mb_strlen($str), $encoding);
+    }
+
+    public function fromArray(array $data)
+    {
+        $this->description($data);
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function html()
+    {
+        return $this->result;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function raw()
+    {
+        return $this->raw;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function disc()
+    {
+        return $this->disc;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function toArray()
+    {
+        return $this->disc;
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function setSingular($text, $singular)
+    {
+        $this->singulars[$text] = $singular;
+        return $this;
     }
 }

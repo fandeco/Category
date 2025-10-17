@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpunit
-        backupGlobals="false"
-        backupStaticAttributes="false"
-        bootstrap="bootstrap.php"
-        colors="true"
-        syntaxCheck="true"
-        convertErrorsToExceptions="true"
-        convertNoticesToExceptions="true"
-        convertWarningsToExceptions="true"
-        processIsolation="false"
-        stopOnFailure="false"
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    bootstrap="bootstrap.php"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    syntaxCheck="true"
 >
     <testsuites>
         <testsuite name="download">
@@ -27,11 +27,11 @@
         <env name="DB_DATABASE" value=":memory:"/>
     </php>
     <logging>
-        <log type="coverage-html" target="./codeCoverage" charset="UTF-8"
-             yui="true" highlight="false"
-             lowUpperBound="35" highLowerBound="70"/>
-        <log type="coverage-clover" target="./codeCoverage/codeCoverage.xml"/>
-        <log type="metrics-xml" target="./metrics/metrics.xml"/>
-        <log type="test-xml" target="./testResults/logfile.xml" logIncompleteSkipped="false"/>
+        <log charset="UTF-8" highLowerBound="70" highlight="false"
+             lowUpperBound="35" target="./codeCoverage"
+             type="coverage-html" yui="true"/>
+        <log target="./codeCoverage/codeCoverage.xml" type="coverage-clover"/>
+        <log target="./metrics/metrics.xml" type="metrics-xml"/>
+        <log logIncompleteSkipped="false" target="./testResults/logfile.xml" type="test-xml"/>
     </logging>
 </phpunit>

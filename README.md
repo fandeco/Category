@@ -8,15 +8,15 @@
 
 ```json
 {
-	"repositories":[
-		{
-			"type":"vcs",
-			"url" :"https://github.com/fandeco/Category"
-		}
-	],
-	"require"     :{
-		"fandeco/category":"dev-master"
-	}
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/fandeco/Category"
+    }
+  ],
+  "require": {
+    "fandeco/category": "dev-master"
+  }
 }
 ```
 
@@ -81,7 +81,9 @@ $disc//  Массив описания для seo и иных шаблонов
 composer up:build
 ```
 
-1) ~~скачать [Проект по новым категориям](https://docs.google.com/spreadsheets/d/1tKIDh4Lo4LjGdXGw5-UzO8ZCRkCDkNYMw4wjB3sU7MM/edit#gid=33988330) в формате `xlsx`~~
+1) ~~
+   скачать [Проект по новым категориям](https://docs.google.com/spreadsheets/d/1tKIDh4Lo4LjGdXGw5-UzO8ZCRkCDkNYMw4wjB3sU7MM/edit#gid=33988330)
+   в формате `xlsx`~~
 2) ~~положить в папу с проектом~~
 3) ~~открыть файл `src/parcer.php` и изменить путь до файла в константе `InputFileName`~~
 4) ~~запустить скрипт `src/parcer.php`~~

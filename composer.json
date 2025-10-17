@@ -1,36 +1,36 @@
 {
-    "name": "fandeco/category",
-    "type": "project",
-    "version" :"1.0.1",
-    "autoload": {
-        "psr-4": {
-            "fandeco\\category\\": "src/"
-        }
-    },
-    "scripts":{
-        "phpUnit:tests": "phpunit --teamcity --bootstrap bootstrap.php",
-        "tests": "phpunit --bootstrap bootstrap.php",
-        "up:parser_depricated": "php ./src/parcer.php",
-        "up:build": "cd TOOL && npm i && node index.js"
-    },
-    "authors": [
-        {
-            "name": "Kirill",
-            "email": "Traineratwot@yandex.ru"
-        }
-    ],
-    "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "mockery/mockery": "^1.4"
-    },
-    "config": {
-        "platform": {
-            "php": "7.4"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\fandeco\\category\\": "tests/"
-        }
+  "name": "fandeco/category",
+  "type": "project",
+  "version": "1.0.1",
+  "autoload": {
+    "psr-4": {
+      "fandeco\\category\\": "src/"
     }
+  },
+  "scripts": {
+    "phpUnit:tests": "phpunit --teamcity --bootstrap bootstrap.php",
+    "tests": "phpunit --bootstrap bootstrap.php",
+    "up:parser_depricated": "php ./src/parcer.php",
+    "up:build": "cd TOOL && npm i && node index.js"
+  },
+  "authors": [
+    {
+      "name": "Kirill",
+      "email": "Traineratwot@yandex.ru"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "mockery/mockery": "^1.4"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\fandeco\\category\\": "tests/"
+    }
+  }
 }
