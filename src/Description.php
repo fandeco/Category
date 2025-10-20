@@ -358,26 +358,26 @@ class Description
         $weight = null;
         $forma = null;
 
-        if (mb_strtolower($category) != 'лампочки') {
-            $diameter = $item['diameter'] ?? null;
-            $country_orig = $item['country_orig'] ?? null;
-            $collection = $item['collection'] ?? null;
-            $weight = $item['weight'] ?? null;
-            $forma = $item['forma'] ?? null;
-            $ip_class = $item['ip_class'] ?? null;
-            $style = $item['style'] ?? null;
-            $plafond_color = $item['plafond_color'] ?? null;
-            $plafond_mat = $item['plafond_material'] ?? null;
-            $armature_color = $item['armature_color'] ?? null;
-            $armature_mat = $item['armature_material'] ?? null;
-            $lamp_socket = $item['lamp_socket'] ?? null;
-            $interer = $item['interer'] ?? null;
-            $length = $item['length'] ?? null;
-            $width = $item['width'] ?? null;
-            $height = $item['height'] ?? null;
-            $num_of_lamp = $item['num_of_lamp'] ?? null;
-            $ploshad_osvesv = $item['ploshad_osvesheniya'] ?? null;
+        $diameter = $item['diameter'] ?? null;
+        $country_orig = $item['country_orig'] ?? null;
+        $collection = $item['collection'] ?? null;
+        $weight = $item['weight'] ?? null;
+        $forma = $item['forma'] ?? null;
+        $ip_class = $item['ip_class'] ?? null;
+        $style = $item['style'] ?? null;
+        $plafond_color = $item['plafond_color'] ?? null;
+        $plafond_mat = $item['plafond_material'] ?? null;
+        $armature_color = $item['armature_color'] ?? null;
+        $armature_mat = $item['armature_material'] ?? null;
+        $lamp_socket = $item['lamp_socket'] ?? null;
+        $interer = $item['interer'] ?? null;
+        $length = $item['length'] ?? null;
+        $width = $item['width'] ?? null;
+        $height = $item['height'] ?? null;
+        $num_of_lamp = $item['num_of_lamp'] ?? null;
+        $ploshad_osvesv = $item['ploshad_osvesheniya'] ?? null;
 
+        if (mb_strtolower($category) != 'лампочки') {
             //fish
             $fish = null;
             if ($category && self::indexSearch($category, $this->ignore)) {
@@ -395,7 +395,7 @@ class Description
             if ($vendor && !is_numeric($vendor)) {
                 $vendor = strtr((string)$vendor, $this->vendor);
             } else {
-                $vendor = $item['vendor.name_1c'] ?? null;
+                $vendor = $item['vendor.name_1c'] ?? $item['vendor_code'] ?? null;
             }
             //sub_category
             try {
